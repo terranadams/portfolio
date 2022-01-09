@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const PokeCard = ({ pokemon }) => {
   return (
-    <Link to ={`/${pokemon.id}`} style={{textDecoration: 'none'}}>
+    <Link to ={`/pokedex/${pokemon.id}`} style={{textDecoration: 'none'}}>
       <Card key={pokemon.id} className='bg-secondary' style={{width: '220px', height: '280px'}}>
         <Card.Img
           variant='top'
