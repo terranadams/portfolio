@@ -15,7 +15,7 @@ const Navigation = () => {
             <Nav.Link href='#link'>About Me</Nav.Link>
             <NavDropdown title='React' id='basic-nav-dropdown'>
               
-              <NavDropdown.Item href='#action/3.1'>Pokédex</NavDropdown.Item>
+              <NavDropdown.Item href='pokedex'>Pokédex</NavDropdown.Item>
               
               <NavDropdown.Divider />
               <NavDropdown.Item href='#action/3.4'>

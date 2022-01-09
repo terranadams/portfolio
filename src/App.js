@@ -1,4 +1,4 @@
-import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css' // THIS IS WHAT YOU NEED FOR THE BOOTSTRAP TO WORK
 import { useState } from 'react'
 import Navigation from './Navigation'
 import Resume from './Resume'
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className='App'>
       <Navigation />
-      
+
       <ListContext.Provider value={{ pokelist, setPokelist }}>
         <Router>
           <Routes>
