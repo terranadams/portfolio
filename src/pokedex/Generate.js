@@ -5,7 +5,7 @@ const Generate = (props) => {
   return (
     // <div className='text-center'>
     <Button className='m-4' variant='success' onClick={props.onClick}>
-      Get New Pokemon
+      Get Random Pokemon
     </Button>
     // </div>
   )
