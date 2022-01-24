@@ -14,13 +14,14 @@ const Search = (props) => {
           value={input}
           onChange={(event) => setInput(event.target.value)}
         ></input>
+
         <Button
           className="m-4"
           variant="success"
-          onSubmit={() => props.onSubmit(input)}
-        >
+          onSubmit={props.onSubmit(input)}>
           Search Pokemon
         </Button>
+
       </Form>
     </div>
   );

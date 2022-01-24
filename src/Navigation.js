@@ -23,7 +23,7 @@ const Navigation = () => {
             </NavDropdown>
 
             <NavDropdown title="Angular" id="basic-nav-dropdown">
-              <NavDropdown.Item href="https://macwhitehead.github.io/NgGroupProject-Trivia/" target="_blank">Trivia Extraordinaire</NavDropdown.Item>
+              <NavDropdown.Item href="https://macwhitehead.github.io/NgGroupProject-Trivia/">Trivia Extraordinaire</NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
