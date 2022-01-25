@@ -8,7 +8,9 @@ import { Row, Col } from "react-bootstrap";
 const Pokedex = () => {
   const [loading, setLoading] = useState(false);
 
-
+  const handleSubmit = (value) => {
+    console.log(value)
+  }
 
   const fetchNewPokemon = async () => {
     setLoading(true);
@@ -29,7 +31,7 @@ const Pokedex = () => {
     <div className="App">
       <Row>
         <Col className="text-center">
-          <Generate onClick={fetchNewPokemon} />
+          <Generate onClick={fetchNewPokemon} handleSubmit={handleSubmit} />
         </Col>
       </Row>
       {loading ? <h4 className="text-white">Loading...</h4> : ""}
