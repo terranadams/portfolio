@@ -11,8 +11,9 @@ const Pokedex = () => {
 
 
   const handleSearch = async (value) => {
-    // console.log(value)
-    setLoading(true);
+
+    try {
+      setLoading(true);
     const data = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${value}/`
     );
@@ -20,6 +21,10 @@ const Pokedex = () => {
     setLoading(false);
     // console.log(newPokemonData)
     setPokelist([newPokemonData, ...pokelist]);
+    } catch (error) {
+      console.error(error);
+      setLoading(false)
+    }
   };
   
 
