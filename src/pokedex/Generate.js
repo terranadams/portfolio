@@ -21,7 +21,7 @@ const Generate = (props) => {
           setInput("");
         }}
       >
-        Get Random Pokémon
+        Get a Random Pokémon
       </Button>
       or
       <form onSubmit={handleSubmit}>
