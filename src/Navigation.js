@@ -7,12 +7,15 @@ const Navigation = () => {
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
         <Navbar.Brand href="/">Terran Adams</Navbar.Brand>
-        {/* <Navbar.Toggle aria-controls='basic-navbar-nav' /> */}
+        <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="experience">Experience</Nav.Link>
+            {/* <Link to='/experience'>Experience</Link> */}
             <Nav.Link href="education">Education</Nav.Link>
+            {/* <Link to='/education'>Education</Link> */}
             <Nav.Link href="skills">Skills</Nav.Link>
+            {/* <Link to='/skills'>Skills</Link> */}
             <NavDropdown title="React" id="basic-nav-dropdown">
               <NavDropdown.Item href="pokedex">Pokédex</NavDropdown.Item>
 

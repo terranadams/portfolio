@@ -2,8 +2,9 @@ import React from "react";
 
 const Experience = () => {
   return (
-    <div>
+    <div className="text-center">
       <h3>Experience:</h3>
+      <br></br>
       <h5>
         <strong>Accela, Inc.</strong> <i>April 2021 - present</i>
       </h5>
@@ -15,6 +16,13 @@ const Experience = () => {
         application, which involved utilizing our API using Postman to decipher
         where errors come from in the mobile app using Trace IDs provided in the
         API call’s response.
+      </p>
+      <br></br><br></br>
+      <h5>
+        <strong>FastFill Systems LLC</strong> <i>August 2017 - April 2021</i>
+      </h5>
+      <p>
+      I build, QA, box and ship fuel nozzles made for the mining industry.
       </p>
     </div>
   );

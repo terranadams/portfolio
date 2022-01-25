@@ -3,6 +3,7 @@ import React from "react";
 const Education = () => {
   return (
     <div className="text-center">
+        <h3>Education:</h3>
       <h5 className="col-lg-12">
         I am a graduate of Mountainland Technical College in Lehi UT, achieving
         my Web Development and Programming certificate in 2021. I am also a
