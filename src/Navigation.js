@@ -10,9 +10,9 @@ const Navigation = () => {
         {/* <Navbar.Toggle aria-controls='basic-navbar-nav' /> */}
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Experience</Nav.Link>
-            <Nav.Link href="#link">Education</Nav.Link>
-            <Nav.Link href="#link">About Me</Nav.Link>
+            <Nav.Link href="experience">Experience</Nav.Link>
+            <Nav.Link href="education">Education</Nav.Link>
+            <Nav.Link href="skills">Skills</Nav.Link>
             <NavDropdown title="React" id="basic-nav-dropdown">
               <NavDropdown.Item href="pokedex">Pokédex</NavDropdown.Item>
 

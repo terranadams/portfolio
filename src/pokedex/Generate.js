@@ -15,7 +15,7 @@ const Generate = (props) => {
     <div className="text-center">
       <Button
         className="m-4"
-        variant="success"
+        variant="info"
         onClick={() => {
           props.randomButton();
           setInput("");
@@ -23,7 +23,7 @@ const Generate = (props) => {
       >
         Get a Random Pokémon
       </Button>
-      or
+      <h5>or</h5>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -35,7 +35,7 @@ const Generate = (props) => {
         <Button
           type="submit"
           className="m-4"
-          variant="success"
+          variant="info"
           placeholder="Search for Pokémon"
         >
           Go

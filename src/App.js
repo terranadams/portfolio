@@ -4,6 +4,9 @@ import Navigation from "./Navigation";
 import Resume from "./Resume";
 import Pokedex from "./pokedex/Pokedex";
 import PokemonPage from "./pokedex/PokemonPage";
+import Experience from './Experience'
+import Education from "./Education";
+import Skills from "./Skills";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ListContext } from "./pokedex/contexts/ListContext";
 
@@ -20,6 +23,9 @@ function App() {
             <Route path="/" element={<Resume />} exact />
             <Route path="/pokedex" element={<Pokedex />} exact />
             <Route path="/pokedex/:id" element={<PokemonPage />} exact />
+            <Route path="/experience" element={<Experience />} exact />
+            <Route path="/education" element={<Education />} exact />
+            <Route path="/skills" element={<Skills />} exact />
           </Routes>
         </Router>
       </ListContext.Provider>
