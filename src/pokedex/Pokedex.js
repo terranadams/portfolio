@@ -7,10 +7,21 @@ import { Row, Col } from "react-bootstrap";
 
 const Pokedex = () => {
   const [loading, setLoading] = useState(false);
+    const { pokelist, setPokelist } = useContext(ListContext);
 
-  const handleSearch = (value) => {
-    console.log(value)
-  }
+
+  const handleSearch = async (value) => {
+    // console.log(value)
+    setLoading(true);
+    const data = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${value}/`
+    );
+    const newPokemonData = await data.json();
+    setLoading(false);
+    // console.log(newPokemonData)
+    setPokelist([newPokemonData, ...pokelist]);
+  };
+  
 
   const fetchNewPokemon = async () => {
     setLoading(true);
@@ -25,7 +36,6 @@ const Pokedex = () => {
     setPokelist([newPokemonData, ...pokelist]);
   };
 
-  const { pokelist, setPokelist } = useContext(ListContext);
 
   return (
     <div className="App">
