@@ -8,7 +8,7 @@ import { Row, Col } from "react-bootstrap";
 const Pokedex = () => {
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (value) => {
+  const handleSearch = (value) => {
     console.log(value)
   }
 
@@ -31,7 +31,7 @@ const Pokedex = () => {
     <div className="App">
       <Row>
         <Col className="text-center">
-          <Generate onClick={fetchNewPokemon} handleSubmit={handleSubmit} />
+          <Generate randomButton={fetchNewPokemon} handleSearch={handleSearch}/>
         </Col>
       </Row>
       {loading ? <h4 className="text-white">Loading...</h4> : ""}

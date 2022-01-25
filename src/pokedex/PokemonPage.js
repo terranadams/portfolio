@@ -12,10 +12,10 @@ const PokemonPage = () => {
   
     let { id } = useParams() // the new and improved way of getting parameters.
     useEffect(() => {
-      console.log(id)
-      console.log(pokelist)
+      // console.log(id)
+      // console.log(pokelist)
       const pokemon = pokelist.filter(x => x.id == id)
-      console.log(pokemon)
+      // console.log(pokemon)
       setPokeData(pokemon[0])
     }, [])
 
