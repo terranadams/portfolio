@@ -5,20 +5,19 @@ import { LinkContainer } from "react-router-bootstrap";
 import Experience from "./Experience";
 import Education from "./Education";
 import Skills from "./Skills";
+import Home from "./Home";
 
 const Navigation = () => {
   return (
     <Router>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="/">Terran Adams</Navbar.Brand>
+          <Navbar.Brand as ={Link} to="/">Terran Adams</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <div className="justify-content-end">
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto ">
-                {/* <LinkContainer to='/experience'><Nav.Link>Experience</Nav.Link></LinkContainer>
-            <LinkContainer to='/education'><Nav.Link>Education</Nav.Link></LinkContainer>
-            <LinkContainer to='/skills'><Nav.Link>Skills</Nav.Link></LinkContainer> */}
+                
 
                 <Nav.Link as={Link} to="/experience">
                   Experience
@@ -54,6 +53,9 @@ const Navigation = () => {
       </Navbar>
 
       <Routes>
+
+      <Route path="/" element={<Home />}>
+      </Route>
 
       <Route path="/experience" element={<Experience />}>
       </Route>

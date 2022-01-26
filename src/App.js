@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"; // THIS IS WHAT YOU NEED FOR THE BOOTSTRAP TO WORK
 import { useState } from "react";
 import Navigation from "./Navigation";
-import Resume from "./Resume";
+import Home from './Home'
 import Pokedex from "./pokedex/Pokedex";
 import PokemonPage from "./pokedex/PokemonPage";
 import Experience from './Experience'
@@ -15,12 +15,12 @@ function App() {
 
   return (
     <div className="App">
-      <Navigation />
 
       <ListContext.Provider value={{ pokelist, setPokelist }}>
+      <Navigation />
         <Router>
           <Routes>
-            <Route path="/" element={<Resume />} exact />
+            <Route path="/" element={<Home />} exact />
             <Route path="/pokedex" element={<Pokedex />} exact />
             <Route path="/pokedex/:id" element={<PokemonPage />} exact />
             <Route path="/experience" element={<Experience />} exact />
