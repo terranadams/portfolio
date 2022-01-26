@@ -6,6 +6,8 @@ import Experience from "./Experience";
 import Education from "./Education";
 import Skills from "./Skills";
 import Home from "./Home";
+import Pokedex from "./pokedex/Pokedex";
+import PokemonPage from "./pokedex/PokemonPage";
 
 const Navigation = () => {
   return (
@@ -54,16 +56,23 @@ const Navigation = () => {
 
       <Routes>
 
-      <Route path="/" element={<Home />}>
+      <Route path="/" element={<Home />} exact>
       </Route>
 
-      <Route path="/experience" element={<Experience />}>
+      <Route path="/experience" element={<Experience />} exact>
       </Route>
 
-      <Route path="/education" element={<Education />}>
+      <Route path="/education" element={<Education />} exact>
       </Route>
 
-      <Route path="/skills" element={<Skills />}>
+      <Route path="/skills" element={<Skills />} exact>
+      </Route>
+
+      <Route path="/pokedex" element={<Pokedex />} exact>
+      </Route>
+      {/* pokedex link still needs to not be href on line 34*/}
+
+      <Route path="/pokedex/:id" element={<PokemonPage />} exact>
       </Route>
 
       </Routes>

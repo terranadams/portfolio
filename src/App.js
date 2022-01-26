@@ -18,7 +18,7 @@ function App() {
 
       <ListContext.Provider value={{ pokelist, setPokelist }}>
       <Navigation />
-        <Router>
+        {/* <Router>
           <Routes>
             <Route path="/" element={<Home />} exact />
             <Route path="/pokedex" element={<Pokedex />} exact />
@@ -27,7 +27,10 @@ function App() {
             <Route path="/education" element={<Education />} exact />
             <Route path="/skills" element={<Skills />} exact />
           </Routes>
-        </Router>
+        </Router> */}
+
+        {/* All the routes are set up in the <Navigation /> component */}
+        
       </ListContext.Provider>
     </div>
   );
