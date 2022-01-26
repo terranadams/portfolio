@@ -7,6 +7,7 @@ import { Row, Col } from "react-bootstrap";
 
 const Pokedex = () => {
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(false);
     const { pokelist, setPokelist } = useContext(ListContext);
 
 

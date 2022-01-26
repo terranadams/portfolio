@@ -13,6 +13,6 @@ code {
     monospace; 
 }
 
-p, h3, h5, li {
+p, h3, h4, h5, li {
   color: rgb(217, 217, 217)
 }

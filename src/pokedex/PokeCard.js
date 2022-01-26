@@ -12,7 +12,7 @@ const PokeCard = ({ pokemon }) => {
           src={pokemon.sprites.front_default}
         />
         <Card.Body>
-          <Card.Title style={{color: 'black'}}>
+          <Card.Title style={{color: 'black'}} className='text-center'>
             {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
           </Card.Title>
           <Card.Text></Card.Text>
