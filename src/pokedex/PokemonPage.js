@@ -14,8 +14,8 @@ const PokemonPage = () => {
     // console.log(id)
     // console.log(pokelist)
     const pokemon = pokelist.filter((x) => x.id == id);
-    // console.log(pokemon)
     setPokeData(pokemon[0]);
+    // console.log(pokemon[0]);
   }, []);
 
   return (
@@ -29,25 +29,37 @@ const PokemonPage = () => {
             {pokeData?.name?.charAt(0)?.toUpperCase() +
               pokeData?.name?.slice(1)}
           </h3>
-          <br></br><br></br>
+          <br></br>
+          <br></br>
         </div>
-
         <Row>
           <Col>
-            <h5>Normal</h5>
+            <p>Normal</p>
             <Image src={pokeData?.sprites?.front_default} width="150" />
           </Col>
           <Col>
             <Image src={pokeData?.sprites?.back_default} width="150" />
           </Col>
           <Col>
-            <h5>Shiny</h5>
+            <p>Shiny</p>
             <Image src={pokeData?.sprites?.front_shiny} width="150" />
           </Col>
           <Col>
             <Image src={pokeData?.sprites?.back_shiny} width="150" />
           </Col>
         </Row>
+
+        <div className="text-center">
+          <h5>Type(s)</h5>
+        </div>
+
+        {/* {console.log(pokeData?.types)}
+        {pokeData?.types.map((type) => {
+          <p>{type?.type?.name}</p>;
+          {
+            console.log(type?.type?.name);
+          }
+        })} */}
       </Container>
     </div>
   );
