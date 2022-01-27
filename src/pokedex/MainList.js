@@ -9,7 +9,7 @@ const MainList = (props) => {
         <Row>
           {props.pokelist.map((pokemon) => (
             // <Col className='mb-4'>
-            <Col sm={12} md={6} lg={4} xl={3} className='mb-4'>
+            <Col key={Math.random()} sm={12} md={6} lg={4} xl={3} className='mb-4'>
               <PokeCard pokemon={pokemon} />
             </Col>
           ))}
