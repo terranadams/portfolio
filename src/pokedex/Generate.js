@@ -3,7 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { useState } from "react";
 
 const Generate = (props) => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("Charizard");
 
   const handleSubmit = (e) => {
     props.handleSearch(input);

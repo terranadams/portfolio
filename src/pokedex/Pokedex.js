@@ -16,7 +16,7 @@ const Pokedex = () => {
     try {
       setLoading(true);
     const data = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${value}/`
+      `https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}/`
     );
     const newPokemonData = await data.json();
     setLoading(false);
@@ -30,7 +30,9 @@ const Pokedex = () => {
   
 
   const fetchNewPokemon = async () => {
-    setLoading(true);
+
+    try {
+      setLoading(true);
     const data = await fetch(
       `https://pokeapi.co/api/v2/pokemon/${
         Math.floor(Math.random() * 932) + 1
@@ -40,6 +42,10 @@ const Pokedex = () => {
     setLoading(false);
     // console.log(newPokemonData)
     setPokelist([newPokemonData, ...pokelist]);
+    } catch (error) {
+      console.error(error)
+      setLoading(false)
+    }
   };
 
 

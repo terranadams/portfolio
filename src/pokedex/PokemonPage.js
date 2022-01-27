@@ -53,12 +53,15 @@ const PokemonPage = () => {
           <h5>Type(s)</h5>
         </div>
 
-        {/* {console.log(pokeData?.types)} */}
+        {/* {console.log(pokeData?.types?.[0])} */}
+
 
         {pokeData?.types?.map((type) => {
           <p>{type?.type?.name}</p>;
           {console.log(type?.type?.name);}
         })}
+
+        
       </Container>
     </div>
   );
