@@ -5,17 +5,18 @@ const Skills = () => {
     <div>
       <div className="text-center">
         <h3>Skills:</h3>
-          <p>Linux</p>
-          <p>HTML</p>
-          <p>CSS/ SASS</p>
-          <p>Javascript / JQuery</p>
-          <p>React.js</p>
-          <p>Angular.js</p>
-          <p>Python</p>
-          <p>Node.js</p>
-          <p>Express.js</p>
-          <p>Mongo DB</p>
-          <p>SQL</p>
+        <br></br>
+        <p>Linux</p>
+        <p>HTML</p>
+        <p>CSS/ SASS</p>
+        <p>Javascript / JQuery</p>
+        <p>React.js</p>
+        <p>Angular.js</p>
+        <p>Python</p>
+        <p>Node.js</p>
+        <p>Express.js</p>
+        <p>Mongo DB</p>
+        <p>SQL</p>
       </div>
     </div>
   );

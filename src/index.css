@@ -16,3 +16,12 @@ code {
 p, h3, h4, h5, li {
   color: rgb(217, 217, 217)
 }
+
+.paragraphContainer {
+  display: flex;
+  align-content: flex-start;
+}
+.content {
+  flex-basis: 70%;
+  margin: auto;
+}
