@@ -1,6 +1,6 @@
 import React from "react";
-import accelaLogo from "./accela.png";
-import fastfillLogo from "./fastfill.png";
+import accelaLogo from "./media/accela.png";
+import fastfillLogo from "./media/fastfill.png";
 
 const Experience = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import mtechLogo from './mtech.png'
+import mtechLogo from './media/mtech.png'
 
 const Education = () => {
   return (
@@ -16,8 +16,7 @@ const Education = () => {
         <p className="content">
           I am a graduate of Mountainland Technical College in Lehi UT,
           achieving my Web Programming and Development certificate in June of
-          2021. I am also a graduate of Springville High School from Springville
-          UT, achieving my deploma in 2014.
+          2021. 
         </p>
       </div>
     </div>

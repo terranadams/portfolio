@@ -17,6 +17,10 @@ p, h3, h4, h5, li, i {
   color: rgb(217, 217, 217)
 }
 
+img {
+  border-radius: 5px
+}
+
 .paragraphContainer {
   display: flex;
   align-content: flex-start;
