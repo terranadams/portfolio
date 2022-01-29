@@ -1,14 +1,20 @@
 import React from "react";
+import accelaLogo from "./accela.png";
+import fastfillLogo from "./fastfill.png";
 
 const Experience = () => {
   return (
     <div className="text-center">
+      <br></br>
       <h3>Experience:</h3>
       <br></br>
-      <h3>
-        <strong>Accela, Inc.</strong>
-      </h3>
+      <p style={{ fontSize: "8px" }}>Click logo to learn more</p>
+      <a href="https://www.accela.com/about" target="_blank">
+        <img src={accelaLogo} width="200px" />
+      </a>
+      <h3>{/* <strong>Accela, Inc.</strong> */}</h3>
       <i>April 2021 - present</i>
+      <p>Technical Support Engineer</p>
       <div className="paragraphContainer">
         <p className="content">
           I work to diagnose issues with Accela’s software products. I interact
@@ -22,11 +28,13 @@ const Experience = () => {
       </div>
       <br></br>
       <br></br>
-      <h3>
-        <strong>Fast Fill Systems</strong>
-      </h3> 
       <br></br>
+      <a href="https://www.fastfillsystems.com/about.htm" target="_blank">
+        <img src={fastfillLogo} width="200px" />
+      </a>
+      <h3>{/* <strong>Fast Fill Systems</strong> */}</h3>
       <i>August 2017 - April 2021</i>
+      <p>Workshop Production Worker</p>
       <div className="paragraphContainer">
         <p className="content">
           I build, QA, box and ship fuel nozzles made for the mining industry.
@@ -35,6 +43,7 @@ const Experience = () => {
           replaced and the product is repurposed.
         </p>
       </div>
+      <br></br>
     </div>
   );
 };

@@ -4,6 +4,7 @@ const Skills = () => {
   return (
     <div>
       <div className="text-center">
+        <br></br>
         <h3>Skills:</h3>
         <br></br>
         <p>Linux</p>
