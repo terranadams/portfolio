@@ -9,6 +9,9 @@ import skate3 from './media/skate3.gif'
 import calvin1 from './media/calvin.jpg'
 import calvin2 from './media/calvin2.jpg'
 import calvinGif from './media/calvinGif.gif'
+import rocknroll from './media/rocknroll.gif'
+import games from './media/games.gif'
+import f1 from './media/f1.gif'
 
 
 const Home = () => {
@@ -24,7 +27,7 @@ const Home = () => {
       <img src={me} width='300px' style={{marginBottom: '10px'}}/>
       <div className="paragraphContainer">
         <p className="content">
-          My name is Terran Adams, and I grew up in Utah County.
+          My name is Terran Adams, and I'm an aspiring ReactJS developer.
         </p>
       </div>
       <br></br><br></br>
@@ -42,6 +45,12 @@ const Home = () => {
         <img src={calvinGif} style={imgStyle} width='300px'/>
         <img src={calvin2} style={imgStyle} width='300px' height='390px'/>
         <p>I love Calvin & Hobbes</p>
+        <br></br><br></br>
+        <img src={f1} style={imgStyle} width='400px' />
+        <img src={games} style={imgStyle} width='400px' />
+        <img src={rocknroll} style={imgStyle} width='400px' />
+        <p>And I LIVE for Formula 1, modifying retro Gameboys, and Rock 'n' Roll</p>
+        <br></br><br></br>
     </div>
     )
 }

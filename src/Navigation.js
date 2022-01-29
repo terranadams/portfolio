@@ -14,7 +14,7 @@ const Navigation = () => {
     <Router>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand as ={Link} to="/">Terran Adams</Navbar.Brand>
+          <Navbar.Brand as ={Link} to="/"><span className='navStuff'>Terran Adams</span></Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <div className="justify-content-end">
             <Navbar.Collapse id="basic-navbar-nav">
@@ -22,13 +22,13 @@ const Navigation = () => {
                 
 
                 <Nav.Link as={Link} to="/experience">
-                  Experience
+                  <span className='navStuff'>Experience</span>
                 </Nav.Link>
                 <Nav.Link as={Link} to="/education">
-                  Education
+                  <span className='navStuff'>Education</span>
                 </Nav.Link>
                 <Nav.Link as={Link} to="/skills">
-                  Skills
+                  <span className='navStuff'>Skills</span>
                 </Nav.Link>
 
                 <NavDropdown title="React" id="basic-nav-dropdown">
