@@ -2,13 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Row, Col } from 'react-bootstrap'
 import ProductCard from "./ProductCard";
 
-// category
-// description
-// id
-// img
-// price
-// rating
-// title
+
 
 const ProductsPage = () => {
   useEffect(() => {
@@ -25,7 +19,7 @@ const ProductsPage = () => {
     const items = await data.json();
     setItems(items);
     setCurrentItems(items);
-    console.log(items);
+    // console.log(items);
   };
 
   const onCategoryChange = (value) => {
@@ -39,8 +33,9 @@ const ProductsPage = () => {
   };
 
   return (
-  <div id="productsPage" className="text-center">
+  <div className="text-center whiteBG">
     <h1>EShop :)</h1>
+    <br></br>
       <select name="categories" onChange={e => onCategoryChange(e.target.value)}>
         <option value="all">All Items</option>
         <option value="headphones">Headphones</option>
@@ -55,7 +50,7 @@ const ProductsPage = () => {
       <br></br>
     <Row>
     {currentItems.map((item) => (
-      <Col className="text-center">
+      <Col key={item.id} className="text-center">
       <ProductCard product={item} />
       </Col>
     ))}

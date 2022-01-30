@@ -9,6 +9,7 @@ import Home from "./Home";
 import Pokedex from "./pokedex/Pokedex";
 import PokemonPage from "./pokedex/PokemonPage";
 import ProductsPage from "./eshop/ProductsPage";
+import ProductDetailPage from "./eshop/ProductDetailPage";
 
 const Navigation = () => {
   return (
@@ -71,7 +72,7 @@ const Navigation = () => {
 
         <Route path="/eshop" element={<ProductsPage />} exact></Route>
 
-        {/* <Route path="/eshop/:id" element={<ProductDetailPage />} exact></Route> */}
+        <Route path="/eshop/:id" element={<ProductDetailPage />} exact></Route>
       </Routes>
     </Router>
   );
