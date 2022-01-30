@@ -24,7 +24,7 @@ const ProductCard = (props) => {
         case 11: size = {width: '250px', height: '200px'}; break;
         case 12: size = {width: '220px', height: '150px'}; break;
         case 13: size = {width: '220px', height: '200px'}; break;
-        case 14: size = {width: '170px', height: '200px'}; break;
+        case 14: size = {width: '150px', height: '200px'}; break;
         case 15: size = {width: '150px', height: '240px'}; break;
         case 16: size = {width: '170px', height: '200px'}; break;
         case 17: size = {width: '170px', height: '200px'}; break;
@@ -34,26 +34,13 @@ const ProductCard = (props) => {
     }
 
   return (
+      // <Link to ={`/eshop/${product.id}`} style={{textDecoration: 'none'}}>
     <div style={{margin: '30px'}}>
       <h6>{product.title}</h6>
-      <p>{product.id}</p>
+      <p>${product.price}</p>
       <img src={product.img} width={size.width} height={size.height} />
     </div>
-    // // <Link to ={`/pokedex/${pokemon.id}`} style={{textDecoration: 'none'}}>
-    //   <Card key={product.id} className='bg-secondary' style={{width: '220px', height: '280px'}}>
-    //     <Card.Img
-    //       variant='top'
-    //       width={width}
-    //       src={product.img}
-    //     />
-    //     <Card.Body>
-    //       <Card.Title style={{color: 'black'}} className='text-center'>
-    //         {product.title}
-    //       </Card.Title>
-    //       {/* <Card.Text></Card.Text> */}
-    //     </Card.Body>
-    //   </Card>
-    // //   </Link>
+    //   </Link>
   );
 };
 

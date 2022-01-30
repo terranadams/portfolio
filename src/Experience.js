@@ -4,7 +4,7 @@ import fastfillLogo from "./media/fastfill.png";
 
 const Experience = () => {
   return (
-    <div className="text-center">
+    <div className="text-center whiteText">
       <br></br>
       <h3>Experience:</h3>
       <br></br>

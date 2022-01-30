@@ -27,7 +27,7 @@ const Home = () => {
       <br></br>
       <img src={me} width='300px' style={{marginBottom: '10px'}}/>
       <div className="paragraphContainer">
-        <p className="content">
+        <p className="content whiteText">
           My name is Terran Adams, and I'm an aspiring ReactJS developer.
         </p>
       </div>
@@ -35,23 +35,23 @@ const Home = () => {
         <img src={fam1} style={imgStyle} width='300px' height='390px'/>
         <img src={lucy} style={imgStyle} width='300px' height='390px'/>
         <img src={fam2} style={imgStyle} width='300px' height='390px'/>
-        <p>I love my family</p>
+        <p className='whiteText'>I love my family</p>
         <br></br><br></br>
         <img src={skate3} style={imgStyle} width='300px' height='270px'/>
         {/* <img src={skate1} style={imgStyle} width='300px' height='270px'/> */}
         <img src={skate2} style={imgStyle} width='300px' height='270px'/>
         <img src={skate4} style={imgStyle} width='300px' height='270px'/>
-        <p>I love skateboarding</p>
+        <p className='whiteText'>I love skateboarding</p>
         <br></br><br></br>
         <img src={calvin1} style={imgStyle} width='300px' height='390px'/>
         <img src={calvinGif} style={imgStyle} width='300px'/>
         <img src={calvin2} style={imgStyle} width='300px' height='390px'/>
-        <p>I love Calvin & Hobbes</p>
+        <p className='whiteText'>I love Calvin & Hobbes</p>
         <br></br><br></br>
         <img src={f1} style={imgStyle} width='400px' />
         <img src={games} style={imgStyle} width='400px' />
         <img src={rocknroll} style={imgStyle} width='400px' />
-        <p>And I LIVE for Formula 1, modifying retro Gameboys, and Rock 'n' Roll</p>
+        <p className='whiteText'>And I LIVE for Formula 1, modifying retro Gameboys, and Rock 'n' Roll</p>
         <br></br><br></br>
     </div>
     )

@@ -3,7 +3,7 @@ import mtechLogo from './media/mtech.png'
 
 const Education = () => {
   return (
-    <div className="text-center">
+    <div className="text-center whiteText">
       <br></br>
       <h3>Education:</h3>
       <br></br>

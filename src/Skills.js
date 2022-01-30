@@ -3,7 +3,7 @@ import React from "react";
 const Skills = () => {
   return (
     <div>
-      <div className="text-center">
+      <div className="text-center whiteText">
         <br></br>
         <h3>Skills:</h3>
         <br></br>

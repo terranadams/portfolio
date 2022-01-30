@@ -70,6 +70,8 @@ const Navigation = () => {
         <Route path="/pokedex/:id" element={<PokemonPage />} exact></Route>
 
         <Route path="/eshop" element={<ProductsPage />} exact></Route>
+
+        {/* <Route path="/eshop/:id" element={<ProductDetailPage />} exact></Route> */}
       </Routes>
     </Router>
   );
