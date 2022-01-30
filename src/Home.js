@@ -37,9 +37,9 @@ const Home = () => {
         <img src={fam2} style={imgStyle} width='300px' height='390px'/>
         <p>I love my family</p>
         <br></br><br></br>
-        <img src={skate1} style={imgStyle} width='300px' height='270px'/>
-        <img src={skate2} style={imgStyle} width='300px' height='270px'/>
         <img src={skate3} style={imgStyle} width='300px' height='270px'/>
+        {/* <img src={skate1} style={imgStyle} width='300px' height='270px'/> */}
+        <img src={skate2} style={imgStyle} width='300px' height='270px'/>
         <img src={skate4} style={imgStyle} width='300px' height='270px'/>
         <p>I love skateboarding</p>
         <br></br><br></br>

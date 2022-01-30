@@ -8,35 +8,36 @@ import Skills from "./Skills";
 import Home from "./Home";
 import Pokedex from "./pokedex/Pokedex";
 import PokemonPage from "./pokedex/PokemonPage";
+import ProductsPage from "./eshop/ProductsPage";
 
 const Navigation = () => {
   return (
     <Router>
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container>
-          <Navbar.Brand as ={Link} to="/"><span className='navStuff'>Terran Adams</span></Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
+            <span className="navStuff">Terran Adams</span>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <div className="justify-content-end">
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto ">
-                
-
                 <Nav.Link as={Link} to="/experience">
-                  <span className='navStuff'>Experience</span>
+                  <span className="navStuff">Experience</span>
                 </Nav.Link>
                 <Nav.Link as={Link} to="/education">
-                  <span className='navStuff'>Education</span>
+                  <span className="navStuff">Education</span>
                 </Nav.Link>
                 <Nav.Link as={Link} to="/skills">
-                  <span className='navStuff'>Skills</span>
+                  <span className="navStuff">Skills</span>
                 </Nav.Link>
 
                 <NavDropdown title="React" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="pokedex">Pokédex</NavDropdown.Item>
+                  <NavDropdown.Item href="/pokedex">Pokédex</NavDropdown.Item>
 
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.4">
-                    Separated link
+                  <NavDropdown.Item href="/eshop">
+                    E-Commerse Site
                   </NavDropdown.Item>
                 </NavDropdown>
 
@@ -55,28 +56,21 @@ const Navigation = () => {
       </Navbar>
 
       <Routes>
+        <Route path="/" element={<Home />} exact></Route>
 
-      <Route path="/" element={<Home />} exact>
-      </Route>
+        <Route path="/experience" element={<Experience />} exact></Route>
 
-      <Route path="/experience" element={<Experience />} exact>
-      </Route>
+        <Route path="/education" element={<Education />} exact></Route>
 
-      <Route path="/education" element={<Education />} exact>
-      </Route>
+        <Route path="/skills" element={<Skills />} exact></Route>
 
-      <Route path="/skills" element={<Skills />} exact>
-      </Route>
+        <Route path="/pokedex" element={<Pokedex />} exact></Route>
+        {/* pokedex link still needs to not be href on line 34*/}
 
-      <Route path="/pokedex" element={<Pokedex />} exact>
-      </Route>
-      {/* pokedex link still needs to not be href on line 34*/}
+        <Route path="/pokedex/:id" element={<PokemonPage />} exact></Route>
 
-      <Route path="/pokedex/:id" element={<PokemonPage />} exact>
-      </Route>
-
+        <Route path="/eshop" element={<ProductsPage />} exact></Route>
       </Routes>
-
     </Router>
   );
 };
