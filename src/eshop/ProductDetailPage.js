@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Button, Row, Col, ListGroup} from "react-bootstrap";
+import { Button, Row, Col, ListGroup } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 
 // category
 // description
@@ -14,6 +15,7 @@ const ProductDetailPage = () => {
   let { id } = useParams(); // the new and improved way of getting parameters.
 
   const [product, setProduct] = useState({});
+  const [added, setAdded] = useState(false);
 
   useEffect(() => {
     fetchItem();
@@ -26,6 +28,8 @@ const ProductDetailPage = () => {
     const item = await data.json();
     setProduct(item);
   };
+
+  // const dispatch = useDispatch()// We must import the ability to dispatch info to the store.
 
   let size = { width: "200px", height: "200px" };
 
@@ -92,6 +96,18 @@ const ProductDetailPage = () => {
       break;
   }
 
+  const addItem = (item) => {
+    return {
+      type: "ADD_ITEM",
+      payload: {
+        title: item.title,
+        img: item.img,
+        price: item.price,
+        quantity: 1,
+      },
+    };
+  };
+
   return (
     <div className="whiteBG">
       <Link to="/eshop">
@@ -100,36 +116,45 @@ const ProductDetailPage = () => {
 
       <Row>
         <Col md={6} className="text-center">
-        <img style={{margin: '30px'}} src={product.img} width={size.width} height={size.height} />
+          <img
+            style={{ margin: "30px" }}
+            src={product.img}
+            width={size.width}
+            height={size.height}
+          />
         </Col>
         <Col md={6}>
-          <ListGroup style={{margin: '60px'}}>
-          <ListGroup.Item>
-            <h3>{product.title}</h3>
-          </ListGroup.Item>
-          <ListGroup.Item>
-            <p>{product.description}</p>
-          </ListGroup.Item>
-          <ListGroup.Item>
-            <div className="row">
-            <i style={{padding: '10px'}}>${product.price}</i>
-            <button className="btn btn-success">Add to Cart</button>
-            </div>
-          </ListGroup.Item>
+          <ListGroup variant="flush" style={{ margin: "60px" }}>
+            <ListGroup.Item>
+              <h3>{product.title}</h3>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <p>{product.description}</p>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <div className="row">
+                <i style={{ padding: "10px" }}>${product.price}</i>
+                <button
+                  className="btn btn-success"
+                  onClick={() => {
+                    // dispatch(addItem(product));
+                    setAdded(true);
+                  }}
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </ListGroup.Item>
+            <ListGroup.Item className="text-center" style={{ color: "grey" }}>
+              {added && "Item added to cart!"}
+            </ListGroup.Item>
           </ListGroup>
         </Col>
       </Row>
-   
-    <br></br>
-      {/* <div className="text-center">
-        <h3 style={{ margin: "40px" }}>{product.title}</h3>
-        <img src={product.img} width={size.width} height={size.height} />
-        <br></br><br></br>
-        <h4>${product.price}</h4>
-        <Button>Add to Cart</Button>
-        <br></br>
-        <br></br>
-      </div> */}
+
+      <br></br>
+      <br></br>
+      <br></br>
     </div>
   );
 };
