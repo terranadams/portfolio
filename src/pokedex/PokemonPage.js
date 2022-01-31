@@ -25,7 +25,7 @@ const PokemonPage = () => {
       </Link>
       <Container>
         <div className="text-center">
-          <h3 className="m-6">
+          <h3 className="m-6 whiteText">
             {pokeData?.name?.charAt(0)?.toUpperCase() +
               pokeData?.name?.slice(1)}
           </h3>
@@ -34,14 +34,14 @@ const PokemonPage = () => {
         </div>
         <Row>
           <Col>
-            <p>Normal</p>
+            <p className="whiteText">Normal</p>
             <Image src={pokeData?.sprites?.front_default} width="150" />
           </Col>
           <Col>
             <Image src={pokeData?.sprites?.back_default} width="150" />
           </Col>
           <Col>
-            <p>Shiny</p>
+            <p className="whiteText">Shiny</p>
             <Image src={pokeData?.sprites?.front_shiny} width="150" />
           </Col>
           <Col>
@@ -50,15 +50,15 @@ const PokemonPage = () => {
         </Row>
 
         <div className="text-center">
-          <h5>Type(s)</h5>
+          {/* <h5 className="whiteText">Type(s)</h5> */}
         </div>
 
         {/* {console.log(pokeData?.types?.[0])} */}
 
 
         {pokeData?.types?.map((type) => {
-          <p>{type?.type?.name}</p>;
-          {console.log(type?.type?.name);}
+          <p className="whiteText">{type?.type?.name}</p>;
+          // {console.log(type?.type?.name);}
         })}
 
         

@@ -43,7 +43,7 @@ const Navigation = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
 
-                <NavDropdown title="Angular" id="basic-nav-dropdown">
+                <NavDropdown style={{paddingRight: "30px"}} title="Angular" id="basic-nav-dropdown">
                   <NavDropdown.Item
                     href="https://macwhitehead.github.io/NgGroupProject-Trivia/"
                     target="_blank"

@@ -23,7 +23,7 @@ const Generate = (props) => {
       >
         Get a Random Pokémon
       </Button>
-      <h5>or</h5>
+      <h5 className="whiteText">or</h5>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
