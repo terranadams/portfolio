@@ -62,7 +62,7 @@ const CartPage = () => {
         <h3>Ready to Checkout? </h3>
         <strong>
           Total Checkout Price: $
-          {itemsList.length === 0 ? "0" : itemsTotalPrice.toFixed(2)}
+          {itemsList.length === 0 ? "0" : itemsTotalPrice.toLocaleString(undefined, {maximumFractionDigits:2})}
         </strong>
         <br></br> <br></br>
         <ul>{displayItems}</ul>

@@ -39,7 +39,7 @@ const Navigation = () => {
 
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="/eshop">
-                    E-Commerse Site
+                    E-Commerce Site
                   </NavDropdown.Item>
                 </NavDropdown>
 
