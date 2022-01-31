@@ -100,6 +100,7 @@ const ProductDetailPage = () => {
     return {
       type: "ADD_ITEM",
       payload: {
+        id: item.id,
         title: item.title,
         img: item.img,
         price: item.price,
