@@ -34,7 +34,7 @@ const ProductsPage = () => {
 
   return (
   <div className="text-center whiteBG">
-    <h1>EShop :)</h1>
+    <h1 style={{padding: '10px'}}>EShop :)</h1>
     <br></br>
       <select name="categories" onChange={e => onCategoryChange(e.target.value)}>
         <option value="all">All Items</option>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Button } from "react-bootstrap";
+import { Button, Row, Col, ListGroup} from "react-bootstrap";
 
 // category
 // description
@@ -31,13 +31,13 @@ const ProductDetailPage = () => {
 
   switch (product.id) {
     case 1:
-      size = { width: "700px", height: "400px" };
+      size = { width: "450px", height: "300px" };
       break;
     case 2:
-      size = { width: "700px", height: "400px" };
+      size = { width: "450px", height: "300px" };
       break;
     case 3:
-      size = { width: "700px", height: "400px" };
+      size = { width: "450px", height: "300px" };
       break;
     case 4:
       size = { width: "300px", height: "360px" };
@@ -95,15 +95,41 @@ const ProductDetailPage = () => {
   return (
     <div className="whiteBG">
       <Link to="/eshop">
-        <Button style={{margin: '20px'}}>Return to Products</Button>
+        <Button style={{ margin: "20px" }}>Return to Products</Button>
       </Link>
-      <div className="text-center">
+
+      <Row>
+        <Col md={6} className="text-center">
+        <img style={{margin: '30px'}} src={product.img} width={size.width} height={size.height} />
+        </Col>
+        <Col md={6}>
+          <ListGroup style={{margin: '60px'}}>
+          <ListGroup.Item>
+            <h3>{product.title}</h3>
+          </ListGroup.Item>
+          <ListGroup.Item>
+            <p>{product.description}</p>
+          </ListGroup.Item>
+          <ListGroup.Item>
+            <div className="row">
+            <i style={{padding: '10px'}}>${product.price}</i>
+            <button className="btn btn-success">Add to Cart</button>
+            </div>
+          </ListGroup.Item>
+          </ListGroup>
+        </Col>
+      </Row>
+   
+    <br></br>
+      {/* <div className="text-center">
         <h3 style={{ margin: "40px" }}>{product.title}</h3>
         <img src={product.img} width={size.width} height={size.height} />
         <br></br><br></br>
         <h4>${product.price}</h4>
+        <Button>Add to Cart</Button>
         <br></br>
-      </div>
+        <br></br>
+      </div> */}
     </div>
   );
 };

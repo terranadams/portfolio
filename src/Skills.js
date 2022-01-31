@@ -9,8 +9,8 @@ const Skills = () => {
         <br></br>
         <p>Linux</p>
         <p>HTML</p>
-        <p>CSS/ SASS</p>
-        <p>Javascript / JQuery</p>
+        <p>CSS</p>
+        <p>Javascript</p>
         <p>React.js</p>
         <p>Angular.js</p>
         <p>Python</p>
