@@ -110,13 +110,18 @@ const ProductDetailPage = () => {
 
   return (
     <div className="whiteBG">
+      <Row>
+        <Col>
       <Link to="/eshop">
         <Button style={{ margin: "20px" }}>Return to Products</Button>
       </Link>
+      </Col>
+      <Col className="text-end">
       <Link to="/eshop/cart">
         <Button style={{ margin: "20px" }}>Go to Cart</Button>
       </Link>
-
+      </Col>
+      </Row>
       <Row>
         <Col md={6} className="text-center">
           <img
