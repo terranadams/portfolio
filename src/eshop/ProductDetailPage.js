@@ -29,7 +29,7 @@ const ProductDetailPage = () => {
     setProduct(item);
   };
 
-  // const dispatch = useDispatch()// We must import the ability to dispatch info to the store.
+  const dispatch = useDispatch()// We must import the ability to dispatch info to the store.
 
   let size = { width: "200px", height: "200px" };
 
@@ -113,6 +113,9 @@ const ProductDetailPage = () => {
       <Link to="/eshop">
         <Button style={{ margin: "20px" }}>Return to Products</Button>
       </Link>
+      <Link to="/eshop/cart">
+        <Button style={{ margin: "20px" }}>Go to Cart</Button>
+      </Link>
 
       <Row>
         <Col md={6} className="text-center">
@@ -137,7 +140,7 @@ const ProductDetailPage = () => {
                 <button
                   className="btn btn-success"
                   onClick={() => {
-                    // dispatch(addItem(product));
+                    dispatch(addItem(product));
                     setAdded(true);
                   }}
                 >
