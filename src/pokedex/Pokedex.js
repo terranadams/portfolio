@@ -2,7 +2,7 @@ import React from "react";
 import Generate from "./Generate";
 import MainList from "./MainList";
 import { useState, useEffect, useContext } from "react";
-import { ListContext } from "./contexts/ListContext";
+import { ListContext } from "./ListContext";
 import { Row, Col, Spinner } from "react-bootstrap";
 
 const Pokedex = () => {

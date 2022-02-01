@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { Col, Row, Container, Image, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { ListContext } from "./contexts/ListContext";
+import { ListContext } from "./ListContext";
 
 const PokemonPage = () => {
   const [pokeData, setPokeData] = useState({});

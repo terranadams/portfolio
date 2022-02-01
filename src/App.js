@@ -8,7 +8,7 @@ import Experience from './Experience'
 import Education from "./Education";
 import Skills from "./Skills";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ListContext } from "./pokedex/contexts/ListContext";
+import { ListContext } from "./pokedex/ListContext";
 
 function App() {
   const [pokelist, setPokelist] = useState([]);
