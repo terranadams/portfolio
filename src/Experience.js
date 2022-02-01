@@ -32,7 +32,7 @@ const Experience = () => {
                 issues with the company’s main mobile application, which
                 involved utilizing our API using Postman to decipher where
                 errors come from in the mobile app using Trace IDs provided in
-                the API call’s response.
+                the API call response.
               </p>
             </div>
             <br></br>

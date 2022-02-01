@@ -64,6 +64,14 @@ const Navigation = () => {
                         >
                           Trivia Extraordinaire
                         </NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item
+                          href="https://terranadams.github.io/Angular-GolfCard/"
+                          target="_blank"
+                        >
+                          {" "}
+                          Interactive GolfCard
+                        </NavDropdown.Item>
                       </NavDropdown>
                     </Nav>
                   </Navbar.Collapse>
