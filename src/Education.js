@@ -7,7 +7,7 @@ const Education = () => {
     <Spring
       from={{ opacity: 0 }}
       to={{ opacity: 1 }}
-      config={{ duration: 3000 }}
+      config={{ duration: 1000 }}
     >
       {(styles) => (
         <animated.div style={styles}>
