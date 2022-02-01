@@ -48,16 +48,16 @@ const ProductCard = (props) => {
       size = { width: "220px", height: "200px" };
       break;
     case 14:
-      size = { width: "150px", height: "200px" };
+      size = { width: "130px", height: "210px" };
       break;
     case 15:
       size = { width: "150px", height: "240px" };
       break;
     case 16:
-      size = { width: "170px", height: "200px" };
+      size = { width: "150px", height: "200px" };
       break;
     case 17:
-      size = { width: "170px", height: "200px" };
+      size = { width: "150px", height: "200px" };
       break;
     case 18:
       size = { width: "220px", height: "300px" };
@@ -76,6 +76,7 @@ const ProductCard = (props) => {
       <div style={{ margin: "30px" }}>
         <h6>{product.title}</h6>
         <p>${product.price}</p>
+        <p>{product.id}</p>
         <img src={product.img} width={size.width} height={size.height} />
       </div>
     </Link>
