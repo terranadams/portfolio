@@ -17,7 +17,7 @@ import { Spring, animated } from "react-spring";
 
 const Home = () => {
   const imgStyle = {
-    margin: "10px",
+    margin: "50px",
   };
 
 
@@ -32,7 +32,7 @@ const Home = () => {
           <div className="text-center">
             <br></br>
             <br></br>
-            <img src={me} width="300px" style={{ marginBottom: "10px" }} />
+            <img src={me} width="300px" style={imgStyle} />
             <div className="paragraphContainer">
               <p className="content whiteText">
                 My name is Terran Adams, and I'm an aspiring ReactJS developer.

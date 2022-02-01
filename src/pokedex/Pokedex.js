@@ -3,7 +3,7 @@ import Generate from "./Generate";
 import MainList from "./MainList";
 import { useState, useEffect, useContext } from "react";
 import { ListContext } from "./contexts/ListContext";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Spinner } from "react-bootstrap";
 
 const Pokedex = () => {
   const [loading, setLoading] = useState(false);
@@ -61,8 +61,7 @@ const Pokedex = () => {
       >
         Click on cards to observe their sprites
       </p>
-      {loading ? <h4 className="text-white">Loading...</h4> : <h4>.</h4>}
-      {/* <h4 className="whiteText">{loading ? "Loading..." : "."}</h4> */}
+      {loading ? <Spinner style={{marginLeft: '30px'}} animation="border" variant="info" /> : <h4>.</h4>}
 
       <MainList pokelist={pokelist} />
     </div>
