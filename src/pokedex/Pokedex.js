@@ -56,6 +56,7 @@ const Pokedex = () => {
           <Generate randomButton={fetchNewPokemon} handleSearch={handleSearch}/>
         </Col>
       </Row>
+      <p className="whiteText text-center" style={{ fontSize: "8px", margin: '20px' }}>Click on cards to observe their sprites</p>
       {loading ? <h4 className="text-white">Loading...</h4> : ""}
       <MainList pokelist={pokelist} />
     </div>
