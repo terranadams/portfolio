@@ -11,7 +11,9 @@ import PokemonPage from "./pokedex/PokemonPage";
 import ProductsPage from "./eshop/ProductsPage";
 import ProductDetailPage from "./eshop/ProductDetailPage";
 import CartPage from "./eshop/CartPage";
+import TimersDashboard from './timetracker/TimersDashboard'
 import { Spring, animated } from "react-spring";
+
 
 const Navigation = () => {
   return (
@@ -46,13 +48,16 @@ const Navigation = () => {
                         <NavDropdown.Item href="/pokedex">
                           Pokédex
                         </NavDropdown.Item>
-
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="/eshop">
                           E-Commerce Site
                         </NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/timetracker">
+                          Time Tracker
+                        </NavDropdown.Item>
                       </NavDropdown>
-
+                    {/*................................................................... */}
                       <NavDropdown
                         style={{ paddingRight: "30px" }}
                         title="Angular"
@@ -106,6 +111,8 @@ const Navigation = () => {
               ></Route>
 
               <Route path="/eshop/cart" element={<CartPage />} exact></Route>
+
+              <Route path="/timetracker" element={<TimersDashboard />} exact></Route>
             </Routes>
           </Router>
         </animated.div>
