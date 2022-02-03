@@ -1,4 +1,5 @@
 import React from "react";
+import { Spring, animated } from "react-spring";
 import { Nav, Navbar, NavDropdown, Container } from "react-bootstrap";
 import { Link, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
@@ -12,7 +13,7 @@ import ProductsPage from "./eshop/ProductsPage";
 import ProductDetailPage from "./eshop/ProductDetailPage";
 import CartPage from "./eshop/CartPage";
 import TimersDashboard from './timetracker/TimersDashboard'
-import { Spring, animated } from "react-spring";
+import Github from './ghusers/Github'
 
 
 const Navigation = () => {
@@ -55,6 +56,10 @@ const Navigation = () => {
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="/timetracker">
                           Time Tracker
+                        </NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/ghusers">
+                          Github Users API
                         </NavDropdown.Item>
                       </NavDropdown>
                     {/*................................................................... */}
@@ -113,6 +118,8 @@ const Navigation = () => {
               <Route path="/eshop/cart" element={<CartPage />} exact></Route>
 
               <Route path="/timetracker" element={<TimersDashboard />} exact></Route>
+
+              <Route path="/ghusers" element={<Github />} exact></Route>
             </Routes>
           </Router>
         </animated.div>
