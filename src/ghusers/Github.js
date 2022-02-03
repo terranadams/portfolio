@@ -16,11 +16,11 @@ const Github = () => {
         <h3 className='header whiteText text-center' style={{margin: '20px'}}>The GitHub Cards App</h3>
         <div className='text-center'>
         <Form onSubmit={addNewProfile} />
-        {profiles.length > 0 ? <p
+        {currentProfile ? <p
         className="whiteText text-center"
         style={{ fontSize: "12px", margin: "20px" }}
       >
-        Click on cards to visit respective Github pages
+        Click on image to visit their Github!
       </p> : <p></p>}
         <hr></hr>
         {/* <CardList profiles={profiles} />  */}

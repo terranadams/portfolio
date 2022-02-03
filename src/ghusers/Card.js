@@ -5,7 +5,7 @@ const Card = (props) => {
 
   return (
     <div className="github-profile" style={{marginBottom: '80px'}}>
-      <img variant='top' src={profile.avatar_url} style={{width: '300px', height:'300px'}}/>
+      <a href={profile.html_url} target='_blank'><img variant='top' src={profile.avatar_url} style={{width: '300px', height:'300px', marginBottom:'30px'}}/></a>
       <div className="info whiteText">
         <h3 className="name">{profile.name}</h3>
         <p>Github Username: {profile.login}</p>
