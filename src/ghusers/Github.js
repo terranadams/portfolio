@@ -5,7 +5,7 @@ import Form from './Form';
 const Github = () => {
     const [profiles, setProfiles] = useState([])
     const addNewProfile = (profileData) => {
-      setProfiles([profileData, ...profiles])
+      setProfiles([...profiles, profileData])
     }
     return (
       <div className='objects'>
