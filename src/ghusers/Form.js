@@ -26,7 +26,7 @@ const Form = (props) => {
         required
       />
       <br></br><br></br>
-      <button className="btn btn-success">Add Github User</button>
+      <button className="btn btn-success">Get User Data</button>
     </form>
   );
 };

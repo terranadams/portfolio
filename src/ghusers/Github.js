@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import CardList from './CardList';
+import Card from './Card'
 import Form from './Form';
 
 const Github = () => {
     const [profiles, setProfiles] = useState([])
+    const [currentProfile, setCurrentProfile] = useState()
     const addNewProfile = (profileData) => {
-      setProfiles([...profiles, profileData])
+      // setProfiles([...profiles, profileData])
+      setCurrentProfile(profileData)
+
     }
     return (
       <div className='objects'>
@@ -19,7 +23,8 @@ const Github = () => {
         Click on cards to visit respective Github pages
       </p> : <p></p>}
         <hr></hr>
-        <CardList profiles={profiles} /> 
+        {/* <CardList profiles={profiles} />  */}
+          {currentProfile ? <Card profile={currentProfile}/> : <br></br>}
         </div>
       </div>
     );
