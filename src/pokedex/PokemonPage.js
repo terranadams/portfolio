@@ -8,14 +8,14 @@ import { ListContext } from "./ListContext";
 const PokemonPage = () => {
   const [pokeData, setPokeData] = useState({});
   const { pokelist } = useContext(ListContext);
+  const [types, setTypes] = useState([])
 
   let { id } = useParams(); // the new and improved way of getting parameters.
   useEffect(() => {
-    // console.log(id)
-    // console.log(pokelist)
     const pokemon = pokelist.filter((x) => x.id == id);
     setPokeData(pokemon[0]);
     // console.log(pokemon[0]);
+    setTypes(pokemon[0].types.map((x) => x.type.name))
   }, []);
 
   return (
@@ -50,15 +50,14 @@ const PokemonPage = () => {
         </Row>
 
         <div className="text-center">
-          {/* <h5 className="whiteText">Type(s)</h5> */}
+          <h5 className="whiteText">Type(s)</h5>
         </div>
 
-        {/* {console.log(pokeData?.types?.[0])} */}
 
 
         {pokeData?.types?.map((type) => {
-          <p className="whiteText">{type?.type?.name}</p>;
-          // {console.log(type?.type?.name);}
+          // <p className="whiteText">{type?.type?.name}</p>;
+          {console.log(type?.type?.name);}
         })}
 
         
