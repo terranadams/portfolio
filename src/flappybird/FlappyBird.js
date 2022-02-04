@@ -4,9 +4,10 @@ import Bird from "./Bird";
 const FlappyBird = () => {
   const [birdPosition, setBirdPosition] = useState(250);
   const birdSize = 20
-  const gameHeight = 510
+  const gameHeight = 505
   const gameWidth = 500
   const gravity = 6
+  const jumpHeight = 50
 
   useEffect(() => {
     let timeId
@@ -21,9 +22,17 @@ const FlappyBird = () => {
     }
   })
   
+  const handleClick = () => {
+    let newBirdPosition = birdPosition - jumpHeight
+    if (newBirdPosition < 0) {
+      setBirdPosition(0)
+    } else {
+          setBirdPosition(newBirdPosition)
+    }
+  }
 
   return (
-    <div className="flappyDiv" style={{ marginTop: "30px" }}>
+    <div className="flappyDiv" style={{ marginTop: "30px" }} onClick={handleClick}>
       <div style={{ height: `${gameHeight}px`, width: `${gameWidth}px`, backgroundColor: "blue" }}>
         <Bird top={birdPosition} size={birdSize}/>
       </div>
