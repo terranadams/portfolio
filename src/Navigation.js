@@ -14,6 +14,7 @@ import CartPage from "./eshop/CartPage";
 import TimersDashboard from './timetracker/TimersDashboard'
 import Github from './ghusers/Github'
 import FlappyBird from "./flappybird/FlappyBird";
+import BlackJack from "./blackjack/BlackJack";
 
 
 const Navigation = () => {
@@ -61,9 +62,13 @@ const Navigation = () => {
                         <NavDropdown.Item href="/ghusers">
                           Github Users API
                         </NavDropdown.Item>
-                        <NavDropdown.Divider />
+                        {/* <NavDropdown.Divider />
                         <NavDropdown.Item href="/flappy">
                           Flappy Bird
+                        </NavDropdown.Item> */}
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/blackjack">
+                          BlackJack
                         </NavDropdown.Item>
                       </NavDropdown>
                     {/*................................................................... */}
@@ -126,6 +131,9 @@ const Navigation = () => {
               <Route path="/ghusers" element={<Github />} exact></Route>
 
               <Route path="/flappy" element={<FlappyBird />} exact></Route>
+
+              <Route path="/blackjack" element={<BlackJack />} exact></Route>
+
 
             </Routes>
           </Router>
