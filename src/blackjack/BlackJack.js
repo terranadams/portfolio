@@ -1,36 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import PlayerOne from "./PlayerOne";
 import PlayerTwo from "./PlayerTwo";
 
 const BlackJack = () => {
+  const [deck, setDeck] = useState();
+  const [playerOneHand, setPlayerOneHand] = useState();
+  const [playerTwoHand, setPlayerTwoHand] = useState();
 
   useEffect(() => {
-    getNewDeck();
+    fetch("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
+      .then((response) => response.json())
+      .then((data) => setDeck(data));
   });
 
-  const [deck, setDeck] = useState()
-
-  const getNewDeck = async () => {
+  const getACard = async () => {
     const response = await fetch(
-      "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
-    ).then(res => {
-        const data = res.json()
-        console.log(data)
-    })
-    
+      `https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=1`
+    )
+      .then((res) => res.json())
+      .then(data => console.log(data.cards[0]))
   };
 
   return (
     <div>
       <Row>
+        <Button onClick={getACard}>Get Card</Button>
+      </Row>
+      {/* <Row>
         <Col>
           <PlayerOne />
         </Col>
         <Col>
           <PlayerTwo />
         </Col>
-      </Row>
+      </Row> */}
     </div>
   );
 };
