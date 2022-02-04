@@ -14,6 +14,7 @@ import ProductDetailPage from "./eshop/ProductDetailPage";
 import CartPage from "./eshop/CartPage";
 import TimersDashboard from './timetracker/TimersDashboard'
 import Github from './ghusers/Github'
+import Flappy from "./flappybird/Flappy";
 
 
 const Navigation = () => {
@@ -60,6 +61,10 @@ const Navigation = () => {
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="/ghusers">
                           Github Users API
+                        </NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item href="/flappybird">
+                          Flappy Bird
                         </NavDropdown.Item>
                       </NavDropdown>
                     {/*................................................................... */}
@@ -120,6 +125,9 @@ const Navigation = () => {
               <Route path="/timetracker" element={<TimersDashboard />} exact></Route>
 
               <Route path="/ghusers" element={<Github />} exact></Route>
+
+              <Route path="/flappybird" element={<Flappy />} exact></Route>
+
             </Routes>
           </Router>
         </animated.div>
