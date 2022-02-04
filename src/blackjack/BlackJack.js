@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, Button } from "react-bootstrap";
+import { CardContext } from "./CardContext";
 import PlayerField from "./PlayerField";
 
 const BlackJack = () => {
@@ -13,46 +14,29 @@ const BlackJack = () => {
       .then((data) => setDeck(data));
   });
 
-  const playerDraw = async (player) => {
-    const response = await fetch(
-      `https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=2`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        //   setPlayerHand(data.cards[0].code)
-        if (player === 1) {
-          setPlayerOneHand([data.cards]);
-          console.log("Player 1 drew: " + data.cards[0].code + ' and ' + data.cards[1].code);
-        } else if (player === 2) {
-          setPlayerTwoHand([data.cards]);
-          console.log("Player 2 drew: " + data.cards[0].code + ' and ' + data.cards[1].code);
-        }
-      });
-  };
-
   const showHands = () => {
-    console.log(
-      "Player1 got " + playerOneHand + " while Player2 got " + playerTwoHand
-    );
     console.log(playerOneHand)
     console.log(playerTwoHand)
   };
 
   return (
-    <div className="text-center">
-      <Row>
-        <Col>
-          <PlayerField player="1" onClick={() => playerDraw(1)} />
-
-        </Col>
-        <Col>
+    <CardContext.Provider value={{playerOneHand, setPlayerOneHand, playerTwoHand, setPlayerTwoHand}}>
+      <div className="text-center">
+        {deck && (
+          <Row>
+            <Col>
+              <PlayerField player="1" deckId={deck.deck_id} />
+            </Col>
+          <Col>
           <Button onClick={showHands}>Show player hands</Button>
-        </Col>
-        <Col>
-          <PlayerField player="2" onClick={() => playerDraw(2)} />
-        </Col>
-      </Row>
-    </div>
+          </Col>
+            <Col>
+              <PlayerField player="2" deckId={deck.deck_id} />
+            </Col>
+          </Row>
+        )}
+      </div>
+    </CardContext.Provider>
   );
 };
 
