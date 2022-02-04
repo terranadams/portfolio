@@ -2,8 +2,8 @@ import React from 'react';
 
 const Bird = (props) => {
   return <div style={{
-      position: 'relative',
-      backgroundColor: 'green',
+      position: 'absolute',
+      backgroundColor: 'red',
       height: `${props.size}px`,
       width: `${props.size}px`,
       top: `${props.top}px`,
