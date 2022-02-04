@@ -14,27 +14,38 @@ const BlackJack = () => {
       .then((data) => setDeck(data));
   });
 
-  const getACard = async () => {
+  const playerDraw = async (player) => {
     const response = await fetch(
       `https://deckofcardsapi.com/api/deck/${deck.deck_id}/draw/?count=1`
     )
       .then((res) => res.json())
-      .then(data => console.log(data.cards[0]))
+      .then((data) => {
+        //   setPlayerHand(data.cards[0].code)
+        if (player == 1) {
+          setPlayerOneHand(data.cards[0].code);
+          console.log('Player 1 drew ' + data.cards[0].code)
+        } else if (player == 2) {
+          setPlayerTwoHand(data.cards[0].code);
+          console.log('Player 2 drew ' + data.cards[0].code)
+        }
+      });
+  };
+
+  const showHands = () => {
+    console.log("Player1 got " + playerOneHand + " while Player2 got " + playerTwoHand);
   };
 
   return (
-    <div>
+    <div className="text-center">
       <Row>
-        <Button onClick={getACard}>Get Card</Button>
+        <Col>
+          <PlayerOne onClick={() => playerDraw(1)} />
+        </Col>
+        <Col>
+          <PlayerTwo onClick={() => playerDraw(2)} />
+        </Col>
       </Row>
-      {/* <Row>
-        <Col>
-          <PlayerOne />
-        </Col>
-        <Col>
-          <PlayerTwo />
-        </Col>
-      </Row> */}
+      <Button onClick={showHands}>Show player hands</Button>
     </div>
   );
 };
