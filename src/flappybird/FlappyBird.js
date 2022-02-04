@@ -4,7 +4,7 @@ import Bird from "./Bird";
 const FlappyBird = () => {
   const [birdPosition, setBirdPosition] = useState(250);
   const birdSize = 20
-  const gameHeight = 500
+  const gameHeight = 510
   const gameWidth = 500
   const gravity = 6
 
@@ -13,7 +13,7 @@ const FlappyBird = () => {
     if (birdPosition < gameHeight - birdSize) {
       timeId = setInterval(() => {
         setBirdPosition((birdPosition) => birdPosition + gravity);
-      }, 24)
+      }, 30)
     }
 
     return () => {
