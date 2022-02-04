@@ -4,9 +4,9 @@ const Bird = (props) => {
   return <div style={{
       position: 'absolute',
       backgroundColor: 'green',
-      height: '20px',
-      width: '20px',
-      top: props.top,
+      height: `${props.size}px`,
+      width: `${props.size}px`,
+      top: `${props.top}px`,
       borderRadius: '50%'
   }}></div>;
 };
