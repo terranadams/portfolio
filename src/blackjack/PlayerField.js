@@ -5,7 +5,27 @@ import { Button, Row, Col } from "react-bootstrap";
 const PlayerField = (props) => {
   const { playerOneHand, setPlayerOneHand, playerTwoHand, setPlayerTwoHand } =
     useContext(CardContext);
-  const [player1, setPlayer1] = useState();
+  const [player1, setPlayer1] = useState(false);
+
+  const [handValue, setHandValue] = useState()
+
+  const getHandValue = (cards) => {
+    let totalValue = 0
+    cards.map(card => {
+      if (card.value === "KING" || card.value === "QUEEN" || card.value === "JACK") {
+        totalValue = totalValue + 10
+      } else if (card.value !== "ACE") {
+        totalValue = totalValue + Number(card.value)
+      } else {
+        if (totalValue > 20) {
+          totalValue = totalValue + 1
+        } else {
+          totalValue = totalValue + 11
+        }
+      }
+    })
+    console.log(totalValue)
+  }
 
   const playerDraw = async () => {
     const response = await fetch(
@@ -17,17 +37,27 @@ const PlayerField = (props) => {
         if (props.player === "1") {
           setPlayerOneHand(data.cards);
           setPlayer1(true);
+          getHandValue(data.cards)
         } else {
           setPlayerTwoHand(data.cards);
           setPlayer1(false);
+          getHandValue(data.cards)
         }
       });
   };
+
+  // make hook for handValue, setHandValue within a new function that takes parameter
+  // and distinguishes the Ace, King, Queen, and Joker
+
+  // make button switch to different function after initial card draws
+
 
   return (
     <div style={{marginLeft: '20px'}}>
       <p>Player {props.player}</p>
       <Button onClick={playerDraw}>Draw 2 Cards</Button>
+      <Row>
+      </Row>
       <Row>
         {player1
           ? playerOneHand.map((card) => (
