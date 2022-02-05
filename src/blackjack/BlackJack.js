@@ -14,27 +14,25 @@ const BlackJack = () => {
       .then((data) => setDeck(data));
   });
 
-  const showHands = () => {
-    console.log(playerOneHand)
-    console.log(playerTwoHand)
-  };
+  // const showHands = () => {
+  //   console.log(`Player1's hand: `, playerOneHand)
+  //   console.log(`Player2's hand: `,playerTwoHand)
+  // };
 
   return (
     <CardContext.Provider value={{playerOneHand, setPlayerOneHand, playerTwoHand, setPlayerTwoHand}}>
-      <div className="text-center">
-        {deck && (
+      <div className="text-center" style={{marginTop:'30px'}}>
+        {deck && 
           <Row>
             <Col>
               <PlayerField player="1" deckId={deck.deck_id} />
             </Col>
-          <Col>
-          <Button onClick={showHands}>Show player hands</Button>
-          </Col>
+          
             <Col>
               <PlayerField player="2" deckId={deck.deck_id} />
             </Col>
           </Row>
-        )}
+        }
       </div>
     </CardContext.Provider>
   );
