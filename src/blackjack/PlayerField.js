@@ -12,6 +12,7 @@ const PlayerField = (props) => {
 
   const getHandValue = (cards) => {
     let totalValue = 0;
+    let ace = false
     cards.map((card) => {
       if (Number(card.value)) totalValue = totalValue + Number(card.value);
       else if (
@@ -21,13 +22,18 @@ const PlayerField = (props) => {
       ) {
         totalValue = totalValue + 10;
       } else {
-        if (totalValue > 20) {
+        if (totalValue + 11 > 20) {
           totalValue = totalValue + 1;
+          ace = true
         } else {
           totalValue = totalValue + 11;
+          ace = true
         }
       }
     });
+    if (ace && totalValue > 21) {
+      totalValue = totalValue - 10
+    }
     // console.log(totalValue)
     setHandValue(totalValue);
   };
