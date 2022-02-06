@@ -24,7 +24,8 @@ const PlayerField = (props) => {
         }
       }
     })
-    console.log(totalValue)
+    // console.log(totalValue)
+    setHandValue(totalValue)
   }
 
   const playerDraw = async () => {
@@ -55,8 +56,13 @@ const PlayerField = (props) => {
   return (
     <div style={{marginLeft: '20px'}}>
       <p>Player {props.player}</p>
-      <Button onClick={playerDraw}>Draw 2 Cards</Button>
+      <Button onClick={playerDraw} style={{marginBottom: '20px'}}>Draw 2 Cards</Button>
+      <br></br>
       <Row>
+        <Col>
+        <h5>Current Hand Value: {handValue}</h5>
+        <br></br>
+        </Col>
       </Row>
       <Row>
         {player1
