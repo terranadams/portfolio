@@ -5,8 +5,6 @@ import { Button, Row, Col } from "react-bootstrap";
 const PlayerField = (props) => {
   const { playerOneHand, setPlayerOneHand, playerTwoHand, setPlayerTwoHand } =
     useContext(CardContext);
-  const [player1, setPlayer1] = useState(false);
-
   const [handValue, setHandValue] = useState()
 
   const getHandValue = (cards) => {
@@ -37,11 +35,9 @@ const PlayerField = (props) => {
         console.log(`Player ${props.player} drew cards.`, data.cards);
         if (props.player === "1") {
           setPlayerOneHand(data.cards);
-          setPlayer1(true);
           getHandValue(data.cards)
         } else {
           setPlayerTwoHand(data.cards);
-          setPlayer1(false);
           getHandValue(data.cards)
         }
       });
@@ -65,7 +61,7 @@ const PlayerField = (props) => {
         </Col>
       </Row>
       <Row>
-        {player1
+        {props.player === '1'
           ? playerOneHand.map((card) => (
               <Col key={Math.random()}>
                 <img
