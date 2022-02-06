@@ -8,19 +8,18 @@ const PlayerField = (props) => {
 
   const [handValue, setHandValue] = useState();
   const [initialDraw, setInitialDraw] = useState(false);
-  const [holding, setHolding] = useState(false)
+  const [holding, setHolding] = useState(false);
 
   const getHandValue = (cards) => {
     let totalValue = 0;
     cards.map((card) => {
-      if (
+      if (Number(card.value)) totalValue = totalValue + Number(card.value);
+      else if (
         card.value === "KING" ||
         card.value === "QUEEN" ||
         card.value === "JACK"
       ) {
         totalValue = totalValue + 10;
-      } else if (card.value !== "ACE") {
-        totalValue = totalValue + Number(card.value);
       } else {
         if (totalValue > 20) {
           totalValue = totalValue + 1;
@@ -60,33 +59,39 @@ const PlayerField = (props) => {
       .then((data) => {
         console.log(`Player ${props.player} drew one card.`, data.cards);
         if (props.player === "1") {
-          let newHand = [...playerOneHand, data.cards[0]]
+          let newHand = [...playerOneHand, data.cards[0]];
           setPlayerOneHand(newHand);
           getHandValue(newHand);
         } else {
-          let newHand = [...playerTwoHand, data.cards[0]]
+          let newHand = [...playerTwoHand, data.cards[0]];
           setPlayerTwoHand(newHand);
           getHandValue(newHand);
         }
       });
-  }
-
-  
+  };
 
   return (
     <div style={{ marginLeft: "20px" }}>
       <p>Player {props.player}</p>
-      {(!initialDraw && !holding) && (
+      {!initialDraw && !holding && (
         <Button onClick={playerDraw2} style={{ marginBottom: "20px" }}>
           Draw 2 Cards
         </Button>
       )}
-      {(initialDraw && !holding) && (
+      {initialDraw && !holding && (
         <>
-          <Button onClick={playerDraw1} variant="success" style={{ marginBottom: "20px" }}>
+          <Button
+            onClick={playerDraw1}
+            variant="success"
+            style={{ marginBottom: "20px" }}
+          >
             Draw another card
           </Button>
-          <Button onClick={() => setHolding(true)} variant="warning" style={{ marginBottom: "20px" }}>
+          <Button
+            onClick={() => setHolding(true)}
+            variant="warning"
+            style={{ marginBottom: "20px" }}
+          >
             Hold
           </Button>
         </>
