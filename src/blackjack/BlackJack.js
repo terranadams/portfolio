@@ -62,7 +62,7 @@ const BlackJack = () => {
           <>
             <Row>
               <Col>
-                {(playerOneWins || playerTwoWins || draw) && <a href='blackjack'><Button style={{marginBottom: '10px'}}>Play Again</Button></a>}
+                {(playerOneDone && playerTwoDone) && <a href='blackjack'><Button style={{marginBottom: '10px'}}>Play Again</Button></a>}
                 {playerOneWins && <h3>Player 1 wins!</h3>}
                 {playerTwoWins && <h3>Player 2 wins!</h3>}
                 {draw && <h3>It's a draw!</h3>}
