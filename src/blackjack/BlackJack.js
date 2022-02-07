@@ -30,6 +30,10 @@ const BlackJack = () => {
       playerTwoWins = true
     } else if (playerOneResult == playerTwoResult) {
       draw = true
+    } else if (playerOneResult <= 21 && playerTwoResult > 21) {
+      playerOneWins = true
+    } else if (playerOneResult > 21 && playerTwoResult <= 21) {
+      playerTwoWins = true
     }
   };
 
