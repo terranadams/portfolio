@@ -9,11 +9,12 @@ const PlayerField = (props) => {
   const [handValue, setHandValue] = useState();
   const [initialDraw, setInitialDraw] = useState(false);
   const [holding, setHolding] = useState(false);
-  const [busted, setBusted] = useState(false)
+  const [busted, setBusted] = useState(false);
+  const [matched, setMatched] = useState(false);
 
   const getHandValue = (cards) => {
     let totalValue = 0;
-    let ace = false
+    let ace = false;
     cards.map((card) => {
       if (Number(card.value)) totalValue = totalValue + Number(card.value);
       else if (
@@ -25,21 +26,24 @@ const PlayerField = (props) => {
       } else {
         if (totalValue + 11 > 20) {
           totalValue = totalValue + 1;
-          ace = true
+          ace = true;
         } else {
           totalValue = totalValue + 11;
-          ace = true
+          ace = true;
         }
       }
     });
     if (ace && totalValue > 21) {
-      totalValue = totalValue - 10
+      totalValue = totalValue - 10;
     }
     // console.log(totalValue)
     setHandValue(totalValue);
-    if (totalValue > 21) {
-      setBusted(true)
-      setHolding(true)
+    if (totalValue == 21) {
+      setMatched(true);
+      setHolding(true);
+    } else if (totalValue > 21) {
+      setBusted(true);
+      setHolding(true);
     }
   };
 
@@ -114,7 +118,8 @@ const PlayerField = (props) => {
           <br></br>
         </Col>
       </Row>
-      <Row>{busted && <h4>You busted!</h4>}</Row>
+      <Row>{busted && <Col><h4  style={{marginBottom: '20px'}}>You busted!</h4></Col>}</Row>
+      <Row>{matched && <Col><h4 style={{marginBottom: '20px'}}>You matched!</h4></Col>}</Row>
       <Row>
         {props.player === "1"
           ? playerOneHand.map((card) => (
