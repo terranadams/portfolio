@@ -23,13 +23,11 @@ const BlackJack = () => {
   let draw = false;
   let gameOver = false;
 
-  if (playerOneDone && playerTwoDone) {
-    if (playerOneResult === 21 && playerTwoResult !== 21) {
-      playerOneWins = true
-    } else if (playerOneResult !== 21 && playerTwoResult === 21) {
-      playerTwoWins = true
+    if (playerOneDone && playerTwoDone) {
+      gameOver = true
     }
-  }
+  
+ 
   return (
     <CardContext.Provider
       value={{
