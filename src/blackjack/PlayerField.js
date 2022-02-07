@@ -9,6 +9,7 @@ const PlayerField = (props) => {
   const [handValue, setHandValue] = useState();
   const [initialDraw, setInitialDraw] = useState(false);
   const [holding, setHolding] = useState(false);
+  const [busted, setBusted] = useState(false)
 
   const getHandValue = (cards) => {
     let totalValue = 0;
@@ -36,6 +37,10 @@ const PlayerField = (props) => {
     }
     // console.log(totalValue)
     setHandValue(totalValue);
+    if (totalValue > 21) {
+      setBusted(true)
+      setHolding(true)
+    }
   };
 
   const playerDraw2 = async () => {
@@ -109,6 +114,7 @@ const PlayerField = (props) => {
           <br></br>
         </Col>
       </Row>
+      <Row>{busted && <h4>You busted!</h4>}</Row>
       <Row>
         {props.player === "1"
           ? playerOneHand.map((card) => (
