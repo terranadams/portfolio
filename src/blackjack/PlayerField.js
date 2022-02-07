@@ -3,8 +3,20 @@ import { CardContext } from "./CardContext";
 import { Button, Row, Col } from "react-bootstrap";
 
 const PlayerField = (props) => {
-  const { playerOneHand, setPlayerOneHand, playerTwoHand, setPlayerTwoHand } =
-    useContext(CardContext);
+  const {
+    playerOneHand,
+    setPlayerOneHand,
+    playerTwoHand,
+    setPlayerTwoHand,
+    playerOneResult,
+    setPlayerOneResult,
+    playerTwoResult,
+    setPlayerTwoResult,
+    playerOneDone,
+    setPlayerOneDone,
+    playerTwoDone,
+    setPlayerTwoDone
+  } = useContext(CardContext);
 
   const [handValue, setHandValue] = useState();
   const [initialDraw, setInitialDraw] = useState(false);
@@ -39,11 +51,30 @@ const PlayerField = (props) => {
     // console.log(totalValue)
     setHandValue(totalValue);
     if (totalValue == 21) {
-      setMatched(true);
-      setHolding(true);
+      if (props.player == "1") {
+        setMatched(true);
+        setHolding(true);
+        setPlayerOneDone(true)
+        // setPlayerOneResult(totalValue);
+        setPlayerOneResult(totalValue);
+      } else {
+        setMatched(true);
+        setHolding(true);
+        setPlayerTwoDone(true)
+        setPlayerTwoResult(totalValue);
+      }
     } else if (totalValue > 21) {
-      setBusted(true);
-      setHolding(true);
+      if (props.player == "1") {
+        setBusted(true);
+        setHolding(true);
+        setPlayerOneDone(true)
+        setPlayerOneResult(totalValue);
+      } else {
+        setBusted(true);
+        setHolding(true);
+        setPlayerTwoDone(true)
+        setPlayerTwoResult(totalValue);
+      }
     }
   };
 
@@ -85,6 +116,12 @@ const PlayerField = (props) => {
       });
   };
 
+  const handleHoldButton = () => {
+    setHolding(true)
+    if (props.player == '1') setPlayerOneDone(true)
+    else setPlayerTwoDone(true)
+  }
+
   return (
     <div style={{ marginLeft: "20px" }}>
       <p>Player {props.player}</p>
@@ -103,7 +140,7 @@ const PlayerField = (props) => {
             Draw another card
           </Button>
           <Button
-            onClick={() => setHolding(true)}
+            onClick={handleHoldButton}
             variant="warning"
             style={{ marginBottom: "20px" }}
           >
@@ -118,8 +155,20 @@ const PlayerField = (props) => {
           <br></br>
         </Col>
       </Row>
-      <Row>{busted && <Col><h4  style={{marginBottom: '20px'}}>You busted!</h4></Col>}</Row>
-      <Row>{matched && <Col><h4 style={{marginBottom: '20px'}}>You matched!</h4></Col>}</Row>
+      <Row>
+        {busted && (
+          <Col>
+            <h4 style={{ marginBottom: "20px" }}>You busted...</h4>
+          </Col>
+        )}
+      </Row>
+      <Row>
+        {matched && (
+          <Col>
+            <h4 style={{ marginBottom: "20px" }}>Blackjack!</h4>
+          </Col>
+        )}
+      </Row>
       <Row>
         {props.player === "1"
           ? playerOneHand.map((card) => (
