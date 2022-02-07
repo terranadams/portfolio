@@ -24,9 +24,9 @@ const BlackJack = () => {
   let gameOver = false;
 
   const findWinner = () => {
-    if (playerOneResult < playerTwoResult) {
+    if (playerOneResult <= 21 && playerTwoResult !== 21 && playerOneResult > playerTwoResult) {
       playerOneWins = true
-    } else if (playerOneResult > playerTwoResult) {
+    } else if (playerOneResult !== 21 && playerTwoResult <= 21 && playerOneResult < playerTwoResult) {
       playerTwoWins = true
     } else if (playerOneResult == playerTwoResult) {
       draw = true
