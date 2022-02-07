@@ -21,11 +21,10 @@ const BlackJack = () => {
   let playerOneWins = false;
   let playerTwoWins = false;
   let draw = false;
+  let gameOver = false;
 
   if (playerOneDone && playerTwoDone) {
-    if (playerOneResult < playerTwoResult && playerOneResult < 22) playerOneWins = true;
-    else if (playerOneResult > playerTwoResult && playerTwoResult < 22) playerTwoWins = true;
-    else if (playerOneResult == playerTwoResult) draw = true;
+    gameOver = true;
   }
   return (
     <CardContext.Provider
@@ -44,11 +43,12 @@ const BlackJack = () => {
         setPlayerTwoDone,
       }}
     >
-      <div className="text-center" style={{ marginTop: "30px" }}>
+      <div className="text-center whiteText" style={{ marginTop: "30px" }}>
         {deck && (
           <>
             <Row>
               <Col>
+                {gameOver && <h3>Game Over!</h3>}
                 {playerOneWins && <h3>Player 1 wins!</h3>}
                 {playerTwoWins && <h3>Player 2 wins!</h3>}
                 {draw && <h3>It's a draw!</h3>}

@@ -123,7 +123,7 @@ const PlayerField = (props) => {
   }
 
   return (
-    <div style={{ marginLeft: "20px" }}>
+    <div style={{ marginLeft: "20px" }} className="whiteText">
       <p>Player {props.player}</p>
       {!initialDraw && !holding && (
         <Button onClick={playerDraw2} style={{ marginBottom: "20px" }}>
