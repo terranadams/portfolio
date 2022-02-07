@@ -15,7 +15,7 @@ const PlayerField = (props) => {
     playerOneDone,
     setPlayerOneDone,
     playerTwoDone,
-    setPlayerTwoDone
+    setPlayerTwoDone,
   } = useContext(CardContext);
 
   const [handValue, setHandValue] = useState();
@@ -23,6 +23,12 @@ const PlayerField = (props) => {
   const [holding, setHolding] = useState(false);
   const [busted, setBusted] = useState(false);
   const [matched, setMatched] = useState(false);
+
+  if (props.player == "1") {
+    setPlayerOneResult(handValue);
+  } else {
+    setPlayerTwoResult(handValue);
+  }
 
   const getHandValue = (cards) => {
     let totalValue = 0;
@@ -54,29 +60,26 @@ const PlayerField = (props) => {
       if (props.player == "1") {
         setMatched(true);
         setHolding(true);
-        setPlayerOneDone(true)
-        // setPlayerOneResult(totalValue);
-        setPlayerOneResult(totalValue);
+        setPlayerOneDone(true);
       } else {
         setMatched(true);
         setHolding(true);
-        setPlayerTwoDone(true)
-        setPlayerTwoResult(totalValue);
+        setPlayerTwoDone(true);
       }
     } else if (totalValue > 21) {
       if (props.player == "1") {
         setBusted(true);
         setHolding(true);
-        setPlayerOneDone(true)
-        setPlayerOneResult(totalValue);
+        setPlayerOneDone(true);
       } else {
         setBusted(true);
         setHolding(true);
-        setPlayerTwoDone(true)
-        setPlayerTwoResult(totalValue);
+        setPlayerTwoDone(true);
       }
     }
   };
+
+ 
 
   const playerDraw2 = async () => {
     const response = await fetch(
@@ -117,10 +120,10 @@ const PlayerField = (props) => {
   };
 
   const handleHoldButton = () => {
-    setHolding(true)
-    if (props.player == '1') setPlayerOneDone(true)
-    else setPlayerTwoDone(true)
-  }
+    setHolding(true);
+    if (props.player == "1") setPlayerOneDone(true);
+    else setPlayerTwoDone(true);
+  };
 
   return (
     <div style={{ marginLeft: "20px" }} className="whiteText">
