@@ -21,7 +21,6 @@ const BlackJack = () => {
   let playerOneWins = false;
   let playerTwoWins = false;
   let draw = false;
-  let gameOver = false;
 
   const findWinner = () => {
     if (playerOneResult <= 21 && playerTwoResult !== 21 && playerOneResult > playerTwoResult) {
@@ -63,7 +62,7 @@ const BlackJack = () => {
           <>
             <Row>
               <Col>
-                {gameOver && <h3>Game Over!</h3>}
+                {(playerOneWins || playerTwoWins || draw) && <a href='blackjack'><Button style={{marginBottom: '10px'}}>Play Again</Button></a>}
                 {playerOneWins && <h3>Player 1 wins!</h3>}
                 {playerTwoWins && <h3>Player 2 wins!</h3>}
                 {draw && <h3>It's a draw!</h3>}
