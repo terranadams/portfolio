@@ -8,60 +8,54 @@ import { ListContext } from "./ListContext";
 const PokemonPage = () => {
   const [pokeData, setPokeData] = useState({});
   const { pokelist } = useContext(ListContext);
-  const [types, setTypes] = useState([])
+  const [types, setTypes] = useState([]);
 
   let { id } = useParams(); // the new and improved way of getting parameters.
   useEffect(() => {
     const pokemon = pokelist.filter((x) => x.id == id);
     setPokeData(pokemon[0]);
     // console.log(pokemon[0]);
-    setTypes(pokemon[0].types.map((x) => x.type.name))
+    setTypes(pokemon[0].types.map((x) => x.type.name));
+    // console.log(pokemon[0].types.map((x) => x.type.name))
   }, []);
 
   return (
-    <div>
+    <div className="whiteText">
       <Link to="/pokedex" className="m-4" variant="success">
         <Button className="m-3">Return</Button>
       </Link>
-      <Container>
-        <div className="text-center">
-          <h3 className="m-6 whiteText">
-            {pokeData?.name?.charAt(0)?.toUpperCase() +
-              pokeData?.name?.slice(1)}
-          </h3>
-          <br></br>
-          <br></br>
-        </div>
-        <Row>
-          <Col>
-            <p className="whiteText">Normal</p>
-            <Image src={pokeData?.sprites?.front_default} width="150" />
-          </Col>
-          <Col>
-            <Image src={pokeData?.sprites?.back_default} width="150" />
-          </Col>
-          <Col>
-            <p className="whiteText">Shiny</p>
-            <Image src={pokeData?.sprites?.front_shiny} width="150" />
-          </Col>
-          <Col>
-            <Image src={pokeData?.sprites?.back_shiny} width="150" />
-          </Col>
-        </Row>
+      <div className="text-center">
+        <h3 className="m-6 whiteText">
+          {pokeData?.name?.charAt(0)?.toUpperCase() + pokeData?.name?.slice(1)}
+        </h3>
+        <br></br>
+        <br></br>
+      </div>
+      <Row>
+        <Col>
+          <p>Normal</p>
+          <Image src={pokeData?.sprites?.front_default} width="150" />
+        </Col>
+        <Col>
+          <Image src={pokeData?.sprites?.back_default} width="150" />
+        </Col>
+        <Col>
+          <p>Shiny</p>
+          <Image src={pokeData?.sprites?.front_shiny} width="150" />
+        </Col>
+        <Col>
+          <Image src={pokeData?.sprites?.back_shiny} width="150" />
+        </Col>
+      </Row>
 
-        <div className="text-center">
-          <h5 className="whiteText">Type(s)</h5>
-        </div>
+      <div className="text-center">
+        <h5>Type(s)</h5>
+      </div>
+      {types.map((type) => {
+        // <p>{type}</p>;
+        console.log(type)
+      })}
 
-
-
-        {pokeData?.types?.map((type) => {
-          // <p className="whiteText">{type?.type?.name}</p>;
-          {console.log(type?.type?.name);}
-        })}
-
-        
-      </Container>
     </div>
   );
 };
