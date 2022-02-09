@@ -3,10 +3,9 @@ import me from "./media/me.JPG";
 import fam1 from "./media/fam1.JPG";
 import lucy from "./media/lucy.png";
 import fam2 from "./media/fam2.jpg";
-import skate1 from "./media/skate.gif";
+import skate1 from "./media/skate1.gif";
 import skate2 from "./media/skate2.gif";
 import skate3 from "./media/skate3.gif";
-import skate4 from "./media/skate4.gif";
 import calvin1 from "./media/calvin.jpg";
 import calvin2 from "./media/calvin2.jpg";
 import calvinGif from "./media/calvinGif.gif";
@@ -46,10 +45,9 @@ const Home = () => {
             <p className="whiteText">I love my family</p>
             <br></br>
             <br></br>
-            <img src={skate3} style={imgStyle} width="300px" height="270px" />
-            {/* <img src={skate1} style={imgStyle} width='300px' height='270px'/> */}
-            <img src={skate2} style={imgStyle} width="300px" height="270px" />
-            <img src={skate4} style={imgStyle} width="300px" height="270px" />
+            <img src={skate1} style={imgStyle}  height="220px" />
+            <img src={skate2} style={imgStyle}  height="220px" />
+            <img src={skate3} style={imgStyle}  height="220px" />
             <p className="whiteText">I love skateboarding</p>
             <br></br>
             <br></br>
