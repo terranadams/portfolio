@@ -14,7 +14,7 @@ const PokemonPage = () => {
   useEffect(() => {
     const pokemon = pokelist.filter((x) => x.id == id);
     setPokeData(pokemon[0]);
-    // console.log(pokemon[0]);
+    console.log(pokemon[0]);
     setTypes(pokemon[0].types.map((x) => x.type.name));
     // console.log(pokemon[0].types.map((x) => x.type.name))
   }, []);
@@ -33,27 +33,27 @@ const PokemonPage = () => {
       </div>
       <Row>
         <Col>
-          <p>Normal</p>
-          <Image src={pokeData?.sprites?.front_default} width="150" />
+          <p style={{marginLeft: '20px'}}>Normal</p>
+          <Image src={pokeData?.sprites?.front_default} width="250" />
         </Col>
         <Col>
-          <Image src={pokeData?.sprites?.back_default} width="150" />
+          <Image src={pokeData?.sprites?.back_default} width="250" />
         </Col>
         <Col>
-          <p>Shiny</p>
-          <Image src={pokeData?.sprites?.front_shiny} width="150" />
+          <p style={{marginLeft: '20px'}}>Shiny</p>
+          <Image src={pokeData?.sprites?.front_shiny} width="250" />
         </Col>
         <Col>
-          <Image src={pokeData?.sprites?.back_shiny} width="150" />
+          <Image src={pokeData?.sprites?.back_shiny} width="250" />
         </Col>
       </Row>
 
       <div className="text-center">
-        <h5>Type(s)</h5>
+        {/* <h5>Type(s)</h5> */}
       </div>
       {types.map((type) => {
         // <p>{type}</p>;
-        console.log(type)
+        // console.log(type)
       })}
 
     </div>
