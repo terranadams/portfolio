@@ -28,7 +28,7 @@ const Home = () => {
     >
       {(styles) => (
         <animated.div style={styles}>
-          <div className="text-center">
+          <div className="text-center" style={{backgroundColor: 'rgb(50, 0, 0)'}}>
             <br></br>
             <br></br>
             <img src={me} width="300px" style={imgStyle} />
