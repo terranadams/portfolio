@@ -48,19 +48,19 @@ const Navigation = () => {
 
                       <NavDropdown title="React" id="basic-nav-dropdown">
                         <NavDropdown.Item>
-                          <Link to='/pokedex' style={{textDecoration: 'none', color: 'white'}}>Pokédex</Link>
+                          <Link to='/pokedex' style={{textDecoration: 'none', color: 'black'}}>Pokédex</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item>
-                          <Link to='/eshop' style={{textDecoration: 'none', color: 'white'}}>E-Commerce Site</Link>
+                          <Link to='/eshop' style={{textDecoration: 'none', color: 'black'}}>E-Commerce Site</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item>
-                          <Link to='/timetracker' style={{textDecoration: 'none', color: 'white'}}>Time Tracker</Link>
+                          <Link to='/timetracker' style={{textDecoration: 'none', color: 'black'}}>Time Tracker</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item>
-                          <Link to='/ghusers' style={{textDecoration: 'none', color: 'white'}}>Github Users API</Link>
+                          <Link to='/ghusers' style={{textDecoration: 'none', color: 'black'}}>Github Users API</Link>
                         </NavDropdown.Item>
                         {/* <NavDropdown.Divider />
                         <NavDropdown.Item href="/flappy">
@@ -68,7 +68,7 @@ const Navigation = () => {
                         </NavDropdown.Item> */}
                         <NavDropdown.Divider />
                         <NavDropdown.Item>
-                          <Link to='/blackjack' style={{textDecoration: 'none', color: 'white'}}>BlackJack</Link>
+                          <Link to='/blackjack' style={{textDecoration: 'none', color: 'black'}}>BlackJack</Link>
                         </NavDropdown.Item>
                       </NavDropdown>
                     {/*................................................................... */}
