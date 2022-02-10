@@ -7,6 +7,7 @@ import { ListContext } from "./ListContext";
 
 const PokemonPage = () => {
   const [pokeData, setPokeData] = useState({});
+  const [details, setDetails] = useState("");
   const { pokelist } = useContext(ListContext);
   const [types, setTypes] = useState([]);
 
@@ -17,6 +18,14 @@ const PokemonPage = () => {
     console.log(pokemon[0]);
     setTypes(pokemon[0].types.map((x) => x.type.name));
     // console.log(pokemon[0].types.map((x) => x.type.name))
+
+    fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}/`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.flavor_text_entries[0].language.name == 'en') {
+        setDetails(data.flavor_text_entries[0].flavor_text);
+        }
+      });
   }, []);
 
   return (
@@ -26,33 +35,42 @@ const PokemonPage = () => {
       </Link>
       <div className="text-center">
         <h3 className="m-6 whiteText">
-          {pokeData?.name?.charAt(0)?.toUpperCase() + pokeData?.name?.slice(1)}
+          <strong>
+            {pokeData?.name?.charAt(0)?.toUpperCase() +
+              pokeData?.name?.slice(1)}
+          </strong>
         </h3>
+        <br></br>
+        <Row>
+          {types.map((type, index) => (
+            <span className="text-center" key={index}>
+              {type.charAt(0)?.toUpperCase() + type.slice(1)}
+            </span>
+          ))}
+        </Row>
+        <br></br>
+        <Row>
+          <div className="text-center">{details}</div>
+        </Row>
         <br></br>
         <br></br>
       </div>
       <Row>
         <Col>
-          <p style={{marginLeft: '20px'}}>Normal</p>
+          {/* <p style={{ marginLeft: "20px" }}>Normal</p> */}
           <Image src={pokeData?.sprites?.front_default} width="250" />
         </Col>
         <Col>
           <Image src={pokeData?.sprites?.back_default} width="250" />
         </Col>
         <Col>
-          <p style={{marginLeft: '20px'}}>Shiny</p>
+          {/* <p style={{ marginLeft: "20px" }}>Shiny</p> */}
           <Image src={pokeData?.sprites?.front_shiny} width="250" />
         </Col>
         <Col>
           <Image src={pokeData?.sprites?.back_shiny} width="250" />
         </Col>
       </Row>
-
-      <div className="text-center">
-        <h5>Type(s)</h5>
-      </div>
-      {types.map((type, index) => <p className="text-center" key={index}>{type}</p>)}
-
     </div>
   );
 };
