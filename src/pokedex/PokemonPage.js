@@ -51,7 +51,7 @@ const PokemonPage = () => {
       <div className="text-center">
         <h5>Type(s)</h5>
       </div>
-      {types.map((type, index) => <p key={index}>{type}</p>)}
+      {types.map((type, index) => <p className="text-center" key={index}>{type}</p>)}
 
     </div>
   );
