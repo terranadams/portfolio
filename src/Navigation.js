@@ -47,28 +47,28 @@ const Navigation = () => {
                       </Nav.Link>
 
                       <NavDropdown title="React" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="/pokedex">
-                          Pokédex
+                        <NavDropdown.Item>
+                          <Link to='/pokedex' style={{textDecoration: 'none', color: 'white'}}>Pokédex</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="/eshop">
-                          E-Commerce Site
+                        <NavDropdown.Item>
+                          <Link to='/eshop' style={{textDecoration: 'none', color: 'white'}}>E-Commerce Site</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="/timetracker">
-                          Time Tracker
+                        <NavDropdown.Item>
+                          <Link to='/timetracker' style={{textDecoration: 'none', color: 'white'}}>Time Tracker</Link>
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="/ghusers">
-                          Github Users API
+                        <NavDropdown.Item>
+                          <Link to='/ghusers' style={{textDecoration: 'none', color: 'white'}}>Github Users API</Link>
                         </NavDropdown.Item>
                         {/* <NavDropdown.Divider />
                         <NavDropdown.Item href="/flappy">
                           Flappy Bird
                         </NavDropdown.Item> */}
                         <NavDropdown.Divider />
-                        <NavDropdown.Item href="/blackjack">
-                          BlackJack
+                        <NavDropdown.Item>
+                          <Link to='/blackjack' style={{textDecoration: 'none', color: 'white'}}>BlackJack</Link>
                         </NavDropdown.Item>
                       </NavDropdown>
                     {/*................................................................... */}
