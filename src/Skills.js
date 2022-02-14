@@ -26,6 +26,7 @@ const Skills = () => {
               <p>Express.js</p>
               <p>Mongo DB</p>
               <p>SQL</p>
+              <p>GraphQL</p>
             </div>
           </div>
         </animated.div>

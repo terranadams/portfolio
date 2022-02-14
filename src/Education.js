@@ -28,7 +28,7 @@ const Education = () => {
               <p className="content">
                 I am a graduate of Mountainland Technical College in Lehi UT,
                 achieving my Web Programming and Development certificate in June
-                of 2021.
+                of 2021. Click on the MTECH logo for what my certificate entails. 
               </p>
             </div>
           </div>
