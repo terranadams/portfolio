@@ -34,7 +34,7 @@ const Home = () => {
             <img src={me} width="300px" style={imgStyle} />
             <div className="paragraphContainer">
               <p className="content whiteText">
-                My name is Terran Adams, and I'm an aspiring ReactJS developer.
+                My name is Terran Adams, and I'm a ReactJS developer.
               </p>
             </div>
             <br></br>
