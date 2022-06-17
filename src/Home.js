@@ -34,7 +34,7 @@ const Home = () => {
             <img src={me} width="300px" style={imgStyle} />
             <div className="paragraphContainer">
               <p className="content whiteText">
-                My name is Terran Adams, and I'm a software developer.
+                My name is Terran Adams, and I develop software.
               </p>
             </div>
             <br></br>
@@ -53,7 +53,7 @@ const Home = () => {
             <br></br>
             <img src={calvin1} style={imgStyle} width="300px" height="390px" />
             <img src={calvinGif} style={imgStyle} width="300px" />
-            <img src={calvin2} style={imgStyle} width="300px" height="390px" />
+            <img src={calvin2} style={imgStyle} width="350px" height="320px" />
             <p className="whiteText">I love Calvin & Hobbes</p>
             <br></br>
             <br></br>
