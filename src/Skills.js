@@ -16,17 +16,15 @@ const Skills = () => {
               <h3>Skills:</h3>
               <br></br>
               <p>Linux</p>
-              <p>HTML</p>
-              <p>CSS</p>
-              <p>Javascript</p>
+              <p>HTML / CSS / Javascript</p>
               <p>React.js</p>
               <p>Angular.js</p>
-              <p>Python</p>
+              <p>Elixir / Phoenix</p>
+              <p>GraphQL</p>
               <p>Node.js</p>
-              <p>Express.js</p>
+              <p>Python</p>
               <p>Mongo DB</p>
               <p>SQL</p>
-              <p>GraphQL</p>
             </div>
           </div>
         </animated.div>
