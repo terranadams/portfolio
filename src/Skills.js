@@ -20,10 +20,11 @@ const Skills = () => {
               <p>React.js</p>
               <p>Angular.js</p>
               <p>Vue.js</p>
+              <p>Typescript</p>
               <p>Elixir / Phoenix</p>
-              <p>GraphQL</p>
-              <p>Node.js</p>
               <p>Python</p>
+              <p>Node.js</p>
+              <p>GraphQL</p>
               <p>Mongo DB</p>
               <p>SQL</p>
             </div>
