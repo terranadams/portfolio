@@ -19,6 +19,7 @@ const Skills = () => {
               <p>HTML / CSS / Javascript</p>
               <p>React.js</p>
               <p>Angular.js</p>
+              <p>Vue.js</p>
               <p>Elixir / Phoenix</p>
               <p>GraphQL</p>
               <p>Node.js</p>
